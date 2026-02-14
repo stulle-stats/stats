@@ -32,3 +32,5 @@ Thumbs.db
 # Rohdaten (nie ins Repo)
 # -----------------------------
 data/raw/
+/.quarto/
+**/*.quarto_ipynb
