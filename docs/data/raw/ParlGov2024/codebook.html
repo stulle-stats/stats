@@ -1,0 +1,3251 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>codebook – Statistik-Portal</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Statistik-Portal</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Suchen"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navigation umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../index.html"> 
+<span class="menu-text">Start</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../topics/wahlen.html"> 
+<span class="menu-text">Wahlen &amp; Umfragen</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Auf dieser Seite</h2>
+   
+  <ul>
+  <li><a href="#parlgov-codebook" id="toc-parlgov-codebook" class="nav-link active" data-scroll-target="#parlgov-codebook">ParlGov Codebook</a>
+  <ul class="collapse">
+  <li><a href="#reference" id="toc-reference" class="nav-link" data-scroll-target="#reference">Reference</a></li>
+  <li><a href="#coding-rules" id="toc-coding-rules" class="nav-link" data-scroll-target="#coding-rules">Coding rules</a>
+  <ul class="collapse">
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#parties" id="toc-parties" class="nav-link" data-scroll-target="#parties">Parties</a></li>
+  <li><a href="#elections" id="toc-elections" class="nav-link" data-scroll-target="#elections">Elections</a></li>
+  <li><a href="#cabinets" id="toc-cabinets" class="nav-link" data-scroll-target="#cabinets">Cabinets</a></li>
+  </ul></li>
+  <li><a href="#countries" id="toc-countries" class="nav-link" data-scroll-target="#countries">Countries</a>
+  <ul class="collapse">
+  <li><a href="#country-notes" id="toc-country-notes" class="nav-link" data-scroll-target="#country-notes">(_) Country notes</a></li>
+  <li><a href="#australia" id="toc-australia" class="nav-link" data-scroll-target="#australia">Australia</a></li>
+  <li><a href="#austria" id="toc-austria" class="nav-link" data-scroll-target="#austria">Austria</a></li>
+  <li><a href="#belgium" id="toc-belgium" class="nav-link" data-scroll-target="#belgium">Belgium</a></li>
+  <li><a href="#bulgaria" id="toc-bulgaria" class="nav-link" data-scroll-target="#bulgaria">Bulgaria</a></li>
+  <li><a href="#canada" id="toc-canada" class="nav-link" data-scroll-target="#canada">Canada</a></li>
+  <li><a href="#croatia" id="toc-croatia" class="nav-link" data-scroll-target="#croatia">Croatia</a></li>
+  <li><a href="#cyprus" id="toc-cyprus" class="nav-link" data-scroll-target="#cyprus">Cyprus</a></li>
+  <li><a href="#czech-republic" id="toc-czech-republic" class="nav-link" data-scroll-target="#czech-republic">Czech Republic</a></li>
+  <li><a href="#denmark" id="toc-denmark" class="nav-link" data-scroll-target="#denmark">Denmark</a></li>
+  <li><a href="#estonia" id="toc-estonia" class="nav-link" data-scroll-target="#estonia">Estonia</a></li>
+  <li><a href="#finland" id="toc-finland" class="nav-link" data-scroll-target="#finland">Finland</a></li>
+  <li><a href="#france" id="toc-france" class="nav-link" data-scroll-target="#france">France</a></li>
+  <li><a href="#germany" id="toc-germany" class="nav-link" data-scroll-target="#germany">Germany</a></li>
+  <li><a href="#greece" id="toc-greece" class="nav-link" data-scroll-target="#greece">Greece</a></li>
+  <li><a href="#hungary" id="toc-hungary" class="nav-link" data-scroll-target="#hungary">Hungary</a></li>
+  <li><a href="#iceland" id="toc-iceland" class="nav-link" data-scroll-target="#iceland">Iceland</a></li>
+  <li><a href="#ireland" id="toc-ireland" class="nav-link" data-scroll-target="#ireland">Ireland</a></li>
+  <li><a href="#israel" id="toc-israel" class="nav-link" data-scroll-target="#israel">Israel</a></li>
+  <li><a href="#italy" id="toc-italy" class="nav-link" data-scroll-target="#italy">Italy</a></li>
+  <li><a href="#japan" id="toc-japan" class="nav-link" data-scroll-target="#japan">Japan</a></li>
+  <li><a href="#latvia" id="toc-latvia" class="nav-link" data-scroll-target="#latvia">Latvia</a></li>
+  <li><a href="#lithuania" id="toc-lithuania" class="nav-link" data-scroll-target="#lithuania">Lithuania</a></li>
+  <li><a href="#luxembourg" id="toc-luxembourg" class="nav-link" data-scroll-target="#luxembourg">Luxembourg</a></li>
+  <li><a href="#malta" id="toc-malta" class="nav-link" data-scroll-target="#malta">Malta</a></li>
+  <li><a href="#netherlands" id="toc-netherlands" class="nav-link" data-scroll-target="#netherlands">Netherlands</a></li>
+  <li><a href="#new-zealand" id="toc-new-zealand" class="nav-link" data-scroll-target="#new-zealand">New Zealand</a></li>
+  <li><a href="#norway" id="toc-norway" class="nav-link" data-scroll-target="#norway">Norway</a></li>
+  <li><a href="#poland" id="toc-poland" class="nav-link" data-scroll-target="#poland">Poland</a></li>
+  <li><a href="#portugal" id="toc-portugal" class="nav-link" data-scroll-target="#portugal">Portugal</a></li>
+  <li><a href="#romania" id="toc-romania" class="nav-link" data-scroll-target="#romania">Romania</a></li>
+  <li><a href="#slovakia" id="toc-slovakia" class="nav-link" data-scroll-target="#slovakia">Slovakia</a></li>
+  <li><a href="#slovenia" id="toc-slovenia" class="nav-link" data-scroll-target="#slovenia">Slovenia</a></li>
+  <li><a href="#spain" id="toc-spain" class="nav-link" data-scroll-target="#spain">Spain</a></li>
+  <li><a href="#sweden" id="toc-sweden" class="nav-link" data-scroll-target="#sweden">Sweden</a></li>
+  <li><a href="#switzerland" id="toc-switzerland" class="nav-link" data-scroll-target="#switzerland">Switzerland</a></li>
+  <li><a href="#turkey" id="toc-turkey" class="nav-link" data-scroll-target="#turkey">Turkey</a></li>
+  <li><a href="#united-kingdom" id="toc-united-kingdom" class="nav-link" data-scroll-target="#united-kingdom">United Kingdom</a></li>
+  </ul></li>
+  <li><a href="#contributors" id="toc-contributors" class="nav-link" data-scroll-target="#contributors">Contributors</a>
+  <ul class="collapse">
+  <li><a href="#project-leaders" id="toc-project-leaders" class="nav-link" data-scroll-target="#project-leaders">Project leaders</a></li>
+  <li><a href="#institutional-affiliation" id="toc-institutional-affiliation" class="nav-link" data-scroll-target="#institutional-affiliation">Institutional affiliation</a></li>
+  <li><a href="#data-editors" id="toc-data-editors" class="nav-link" data-scroll-target="#data-editors">Data editors</a></li>
+  <li><a href="#major-contributors" id="toc-major-contributors" class="nav-link" data-scroll-target="#major-contributors">Major contributors</a></li>
+  <li><a href="#open-source-software" id="toc-open-source-software" class="nav-link" data-scroll-target="#open-source-software">Open source software</a></li>
+  <li><a href="#contributors-1" id="toc-contributors-1" class="nav-link" data-scroll-target="#contributors-1">Contributors</a></li>
+  </ul></li>
+  <li><a href="#changes" id="toc-changes" class="nav-link" data-scroll-target="#changes">Changes</a>
+  <ul class="collapse">
+  <li><a href="#version-2024" id="toc-version-2024" class="nav-link" data-scroll-target="#version-2024">Version 2024</a></li>
+  <li><a href="#version-2022" id="toc-version-2022" class="nav-link" data-scroll-target="#version-2022">Version 2022</a></li>
+  <li><a href="#version-2020" id="toc-version-2020" class="nav-link" data-scroll-target="#version-2020">Version 2020</a></li>
+  <li><a href="#version-2018" id="toc-version-2018" class="nav-link" data-scroll-target="#version-2018">Version 2018</a></li>
+  <li><a href="#version-2015" id="toc-version-2015" class="nav-link" data-scroll-target="#version-2015">Version 2015</a></li>
+  <li><a href="#version-1412" id="toc-version-1412" class="nav-link" data-scroll-target="#version-1412">Version 14/12</a></li>
+  <li><a href="#version-1312" id="toc-version-1312" class="nav-link" data-scroll-target="#version-1312">Version 13/12</a></li>
+  <li><a href="#version-1210" id="toc-version-1210" class="nav-link" data-scroll-target="#version-1210">Version 12/10</a></li>
+  <li><a href="#version-1107" id="toc-version-1107" class="nav-link" data-scroll-target="#version-1107">Version 11/07</a></li>
+  <li><a href="#version-1011" id="toc-version-1011" class="nav-link" data-scroll-target="#version-1011">Version 10/11</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="parlgov-codebook" class="level1">
+<h1>ParlGov Codebook</h1>
+<p>Created on 12 August 2024, 14:52 from ParlGov database documentation entries.</p>
+<section id="reference" class="level2">
+<h2 class="anchored" data-anchor-id="reference">Reference</h2>
+<p>Döring, Holger and Philip Manow. 2024. Parliaments and governments database (ParlGov): Information on parties, elections and cabinets in established democracies.</p>
+<ul>
+<li><a href="https://parlgov.org">parlgov.org</a></li>
+<li><a href="https://dataverse.harvard.edu/dataverse/parlgov">dataverse.harvard.edu/dataverse/parlgov</a></li>
+<li><a href="https://github.com/hdigital/parlgov-snippets">github.com/hdigital/parlgov-snippets</a></li>
+</ul>
+</section>
+<section id="coding-rules" class="level2">
+<h2 class="anchored" data-anchor-id="coding-rules">Coding rules</h2>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">References</h3>
+<ul>
+<li>Döring, Holger. 2013. “The Collective Action of Data Collection: A Data Infrastructure on Parties, Elections and Cabinets.” European Union Politics 14(1): 161–78.
+<ul>
+<li>DOI: <a href="https://www.doi.org/10.1177/1465116512461189">10.1177/1465116512461189</a></li>
+<li>[ presentation of technical concept ]</li>
+</ul></li>
+<li>Döring, Holger. 2016. “Mapping Established Democracies: Integrated Data on Parties, Elections and Cabinets.” Electoral Studies 44: 535–43.
+<ul>
+<li>DOI: <a href="https://www.doi.org/10.1016/j.electstud.2016.07.002">10.1016/j.electstud.2016.07.002</a></li>
+<li>[ presentation of methodological design and operationalization ]</li>
+</ul></li>
+</ul>
+</section>
+<section id="overview" class="level3">
+<h3 class="anchored" data-anchor-id="overview">Overview</h3>
+<p>We include elections and cabinets in <em>established democracies</em>. More specifically, we include democratic national lower house elections and EP elections for <em>all EU and most OECD members</em>. For the latter, we exclude presidential systems. We record all elections and succeeding cabinets after 1945 or after full democratization according to Boix ea. (2013).</p>
+<p>We also include elections and cabinets before 1945. We record information after 1900 or after the last democratic transition (Boix ea. 2013). As of today, these observations are experimental and may need revision (e.g.&nbsp;largest party with no seats missing).</p>
+</section>
+<section id="parties" class="level3">
+<h3 class="anchored" data-anchor-id="parties">Parties</h3>
+<section id="coding-rules-1" class="level4">
+<h4 class="anchored" data-anchor-id="coding-rules-1">Coding rules</h4>
+<p>We include parties winning <em>more than 1.0% vote share</em> in elections we cover</p>
+<p>Details</p>
+<ul>
+<li>winning 2 seats in an election (eg. member of an electoral alliance)</li>
+<li>party groups that form in parliament
+<ul>
+<li>more than 5.0% seat share (eg. <a href="http://www.parlgov.org/explore/ita/party/1477/">ITA FLI</a>)</li>
+<li>forming in two parliamentary terms (eg. <a href="http://www.parlgov.org/explore/FRA/party/2272/">FRA GDR</a>)</li>
+<li>members of cabinet (eg. <a href="http://www.parlgov.org/explore/swe/party/2608/">SWE NP-AV</a>)</li>
+<li>providing minority support to a cabinet</li>
+</ul></li>
+<li>electoral alliances and members with at least 2 election results</li>
+<li>no party affiliation
+<ul>
+<li>candidates with more than 1.0% vote share (eg. <a href="../../..\explore/IRL/party/2327/">IRL I-TJM</a>)</li>
+<li>includes ‘independent’ (also for presidents)</li>
+<li>one ‘no party affiliation’ included per country</li>
+</ul></li>
+<li>less than 1.0% vote share
+<ul>
+<li>winning 1 seat in 2 elections</li>
+<li>2 election results as largest party no seats (first loser)</li>
+</ul></li>
+<li>special categories: ‘no-seat’ and ‘one-seat’ (see <a href="../../..\documentation/codebook/#election">election</a>)</li>
+</ul>
+<p>We avoid including minor parties or candidates that win a seat only in one election due to low threshold requirements.</p>
+</section>
+<section id="party-change" class="level4">
+<h4 class="anchored" data-anchor-id="party-change">Party change</h4>
+<p>New parties are coded in two tables: <a href="../../..\data/table/party_change/">party change</a> and <a href="../../..\data/table/party_name_change/">party name change</a>.</p>
+<p>Mergers and party splits are only added as a new party if the (largest) predecessor party won less than 75% of the combined vote of all preceding parties in the last election. Otherwise the largest party is just renamed (cf.&nbsp;Döring 2016, 539).</p>
+<p>Details</p>
+<ul>
+<li>splits and re-mergers coded for original party (eg. <a href="../../..\explore/jpn/party/439/">JPN DP</a>)</li>
+<li>see also Barnea/Rahat (2011, 311): ‘a new label and that no more than half of its top candidates (top of candidate list or safe districts) originate from a single former party’</li>
+</ul>
+</section>
+<section id="party-names" class="level4">
+<h4 class="anchored" data-anchor-id="party-names">Party names</h4>
+<p>Party names are sentence case if no national (language) convention requires title case.</p>
+<ul>
+<li>eg. party names for Germany are title case (German and English)</li>
+</ul>
+<p>Party names and delimiters</p>
+<ul>
+<li>‘–’ different languages</li>
+<li>‘/’ (‘+’) alliances</li>
+<li>‘|’ generic names</li>
+<li>[ space before and after delimiter ]</li>
+</ul>
+<p>Year added to smaller party name if identical names exist in a country (eg. <a href="http://www.parlgov.org/explore/svk/party/2235/">SVK SZ-92</a>).</p>
+</section>
+<section id="party-positions" class="level4">
+<h4 class="anchored" data-anchor-id="party-positions">Party positions</h4>
+<p>We provide aggregated party positions in four major dimensions. These positions are time-invariant unweighted mean values of information from party expert surveys on a 0 to 10 scale. All expert surveys are linked with ids from the <a href="../../..\data/table/party/">party</a> table and original values are rescaled before calculating the mean.</p>
+<p>Missing party positions for each dimension are imputed by mean values for the respective party family. We distinguish mean and imputed values by the number of decimal places. Mean values based on external datasets have five decimal places and imputed values have one decimal place only.</p>
+<p>Variables and sources</p>
+<ul>
+<li>left/right — Castles/Mair 1983 (<em>left/right</em>), Huber/Inglehart 1995 (<em>left/right</em>), Benoit/Laver 2006 – (<em>left/right</em>), CHES 2010 (<em>lrgen</em> 1999 and 2002 and 2006)</li>
+<li>state/market — Benoit/Laver 2006 (<em>taxes/spending</em>), CHES 2010 (<em>lrecon</em> 1999 and 2002 and 2006)</li>
+<li>liberty/authority — Benoit/Laver 2006 (<em>social</em>), CHES 2010 (<em>galtan</em> 1999 and 2002 and 2006)</li>
+<li>EU anti/pro — Ray 1999 (<em>pos96</em>), Benoit/Laver 2006 (<em>euauthority</em> or <em>eulargerstronger</em> or <em>eujoining</em>), CHES 2010 (<em>position</em> 1999 and 2002 and 2006)</li>
+</ul>
+</section>
+<section id="party-families" class="level4">
+<h4 class="anchored" data-anchor-id="party-families">Party families</h4>
+<p>We classify parties into families by their position in an economic (state/market) and a cultural (liberty/authority) left/right dimension.</p>
+<p>The classification leads to eight party family categories: Communist/Socialist, Green/Ecologist, Social democracy, Liberal, Christian democracy, Agrarian, Conservative, Right-wing.</p>
+<p>Parties that can not be classified into the eight categories are coded as ‘spec’ in the <a href="../../..\data/table/view_party/">party</a> table with more details in the <a href="../../..\data/table/party_family/">party family</a> table (e.g.&nbsp;<a href="https://en.wikipedia.org/wiki/Hans-Peter_Martin%27s_List">AUT Martin</a>). These are mainly special issue parties without a clear left/right profile.</p>
+<p>We use one classification for the entire history of a party and do not record changes (e.g.&nbsp;<a href="http://www.parlgov.org/explore/FIN/party/200">FIN SP|P</a>).</p>
+<p>We add further information about party families in a separate table (see <a href="../../..\data/table/party_family/">party family</a>).</p>
+</section>
+</section>
+<section id="elections" class="level3">
+<h3 class="anchored" data-anchor-id="elections">Elections</h3>
+<section id="coding-rules-2" class="level4">
+<h4 class="anchored" data-anchor-id="coding-rules-2">Coding rules</h4>
+<p>We include election results for</p>
+<ol type="1">
+<li>all parties that won <em>1.0% vote share</em></li>
+<li>all parties that won <em>2 seats</em> (esp.&nbsp;alliance members)</li>
+</ol>
+<p>Details</p>
+<ul>
+<li>a party that won <em>less than 1.0%</em> vote share and <em>1 seat</em>
+<ul>
+<li>several election results — included into the list of ParlGov parties</li>
+<li>single election result — coded as a ‘one-seat’ party (eg. <a href="http://parlgov.org/explore/pol/election/1991-10-27/">Poland</a>)</li>
+</ul></li>
+<li>a party that won <em>less than 1.0%</em> vote share but was the <em>largest party that won no seats</em> (first loser)
+<ul>
+<li>several election results — included into the list of ParlGov parties</li>
+<li>single election result — coded as a ‘no-seat’ party (eg. <a href="http://parlgov.org/explore/aut/party/2055/">Austria</a>)</li>
+</ul></li>
+<li>parliamentary party groups – <em>see below</em>
+<ul>
+<li>party group seat compositions different to election results</li>
+<li>significant changes in the composition of party groups (more than 5.0% seat share)</li>
+</ul></li>
+<li>mixed-member electoral systems
+<ul>
+<li>proportional (PR) tier <em>votes</em> and <em>vote share</em> recorded</li>
+</ul></li>
+<li>technical party “others”
+<ul>
+<li>only number of seats coded</li>
+</ul></li>
+</ul>
+</section>
+<section id="electoral-alliances" class="level4">
+<h4 class="anchored" data-anchor-id="electoral-alliances">Electoral alliances</h4>
+<p>Electoral alliances are coded by linking election results (variable ‘alliance_id’) of alliance members to an alliance or the strongest party in an electoral alliance.</p>
+<ul>
+<li>each electoral alliance or alliance member coded as an individual party should include <em>2 elections</em></li>
+<li>members of alliances with a dominant party are coded to this party</li>
+<li>alliances of parties that are part of a broader alliance are coded with a ‘data_json’ entry ‘alliance_alliance_id’ (eg. <a href="http://parlgov.org/explore/ita/election/1996-04-21">Italy 1996</a>)</li>
+<li><em>votes</em> are coded at the level of electoral results for all alliance members</li>
+<li><em>seats</em> are coded for alliance members (parliamentary groups), if feasible
+<ul>
+<li>seats of an alliance that forms a parliamentary group with members running independently are coded for alliance members and with a ‘parliament change’ (eg. Germany <a href="http://www.parlgov.org/explore/DEU/party/1727/">CDU/CSU</a>)</li>
+<li>seats of alliance members are coded if no information about the parliamentary party group status is available</li>
+<li>a ‘data_json’ entry ‘seats_alliance’ is added to the alliance to check data consistency</li>
+<li>a ‘one seat’ party which is part of an electoral alliance is coded as an alliance member (eg. <a href="http://parlgov.org/explore/hun/election/2014-04-06/">Hungary 2014</a>)</li>
+</ul></li>
+</ul>
+</section>
+<section id="parliament-composition" class="level4">
+<h4 class="anchored" data-anchor-id="parliament-composition">Parliament composition</h4>
+<ul>
+<li>changes (&gt; 5%) in seats composition are recorded in ‘parliament change’
+<ul>
+<li>esp.&nbsp;if changes affect cabinet majority support</li>
+</ul></li>
+<li>seats composition of parliament at a particular date is recorded in ‘parliament composition’
+<ul>
+<li>esp.&nbsp;if composition is relevant for cabinet formation (eg. <a href="http://www.parlgov.org/explore/jpn/election/1996-10-20/">JPN elections</a> after 1996)</li>
+</ul></li>
+<li><em>coding incomplete</em>
+<ul>
+<li>significant changes only</li>
+<li>lack of systematic and reliable sources</li>
+</ul></li>
+</ul>
+</section>
+<section id="data-sources" class="level4">
+<h4 class="anchored" data-anchor-id="data-sources">Data sources</h4>
+<p>National elections</p>
+<ul>
+<li>Main sources
+<ul>
+<li>official data source – national statistical office – see <a href="../../..\documentation/country">country notes</a></li>
+<li>Nohlen — Elections: A Data Handbook – various volumes of elections around the world</li>
+<li>Mackie/Rose (1945–1990) — only Western democracies</li>
+<li>Essex elections data on Post-Communist Europe (1990–200x)</li>
+<li><a href="http://www.politicaldatayearbook.com/">EJPR Political Data Yearbook</a> (1990–today)</li>
+<li><a href="http://dev.ulb.ac.be/cevipol/en/elections.html">CEVIPOL Electoral results</a> — Europe and Latin-America</li>
+</ul></li>
+<li>Others
+<ul>
+<li><a href="http://www.ipu.org/parline-e/parlinesearch.asp">Parline</a></li>
+<li>Rokkan/Meyriat (1920–1965) — only Western democracies</li>
+<li>Rose/Munro (1990–2001) — Post-Communist Europe</li>
+</ul></li>
+</ul>
+<p>European parliament elections</p>
+<ol type="1">
+<li>official data source – national statistical office</li>
+<li>European Parliament (EP) election report (esp.&nbsp;1979–1999) — based on official statistics</li>
+<li>EJPR yearbook (1990–today)</li>
+</ol>
+</section>
+</section>
+<section id="cabinets" class="level3">
+<h3 class="anchored" data-anchor-id="cabinets">Cabinets</h3>
+<section id="coding-rules-3" class="level4">
+<h4 class="anchored" data-anchor-id="coding-rules-3">Coding rules</h4>
+<p>We record a new cabinet for these events (cf.&nbsp;Budge/Keman 1993: 10)</p>
+<ol type="1">
+<li>any change of parties with cabinet membership</li>
+<li>any change of the prime minister</li>
+<li>any general election</li>
+</ol>
+<p>All parties with ministers in cabinet are included (Indridason/Bowler 2014: 396)</p>
+<ol type="1">
+<li>right to attend cabinet meetings</li>
+<li>right to cast vote before cabinet (if applicable)</li>
+</ol>
+<p>Details</p>
+<ul>
+<li>three month rule
+<ul>
+<li>a continuation (caretaker) cabinet (subset of previous coalition, no new party) is coded once for any change lasting longer than three months</li>
+<li>the three month rule refers to the exact day of the date, not the number of days</li>
+<li>‘data_json’ entry ‘three_month_rule’ (and ‘cabinet_change’)</li>
+<li>see also examples section below</li>
+</ul></li>
+<li>any meaningful investiture procedure defines a new cabinet
+<ul>
+<li>a PM appointment without a cabinet appointment (eg. <a href="../../..\explore/ita/cabinet/1972-02-17/">ITA Andreotti I</a>, <a href="../../..\explore/pol/cabinet/1992-06-05/">POL Pawlak I</a>)</li>
+<li>a constitutionally required new investiture during a parliamentary term (eg. LTU Skvernelis <a href="../../..\explore/LTU/cabinet/2017-10-19/">II</a>+<a href="../../..\explore/LTU/cabinet/2019-08-20/">III</a>, see <a href="../../..\documentation/country/#ltu">LTU notes</a>)</li>
+</ul></li>
+<li>any meaningful resignation defines a new cabinet
+<ul>
+<li>a formal resignation request (eg. <a href="../../..\explore/aut/cabinet/1949-11-08/">AUT Figl III</a>)</li>
+<li>a successful dissolution request under negative parliamentarism (eg. <a href="../../..\explore/swe/cabinet/1958-06-01/">SWE Erlander VII</a>)</li>
+<li>a lost vote of confidence (or early election vote) and change to caretaker status (eg. <a href="../../..\explore/svk/cabinet/2011-10-20/">SVK Radicova II</a>, <a href="../../..\explore/isr/cabinet/1998-01-04/">ISR Netanyahu II 1998</a>)</li>
+</ul></li>
+<li>first appointment event coded
+<ul>
+<li>successive appointments for one cabinet (e.g.&nbsp;<a href="../../..\explore/dnk/cabinet/2011-10-02/">DNK Thorning-Schmidt I</a></li>
+<li>e.g.&nbsp;appointments of PM, cabinet, ministers</li>
+</ul></li>
+<li>cabinet parties not included
+<ul>
+<li>ministers without portfolio, interim or junior ministers</li>
+<li>cabinet members without party affiliation (party family ‘none’) are only coded if the prime minister has no party affiliation (e.g.&nbsp;<a href="../../..\explore/deu/cabinet/1932-06-02/">DEU Papen I</a>)</li>
+<li>parties supporting a (minority) cabinet are included in table <a href="../../..\data/table/cabinet_support/">cabinet support</a> — if information available</li>
+</ul></li>
+<li>splits and mergers of cabinet parties
+<ul>
+<li>coded as cabinet changes (eg. <a href="../../..\explore/aut/cabinet/2003-02-28/">AUS Schuessel III</a>, <a href="../../..\explore/cze/cabinet/1993-01-01/">CZE Klaus II</a>)</li>
+<li>‘data_json’ entry ‘party_split’ and ‘party_merger’</li>
+</ul></li>
+<li>parliamentary groups and alliances
+<ul>
+<li>political parties are coded as parliamentary groups (eg. <a href="../../..\explore/DEU/party/1727/">DEU CDU/CSU</a>)</li>
+<li>alliance members that join a parliamentary group are coded as support parties (eg. <a href="../../..\explore/pol/cabinet/2015-11-16/">POL Szydlo</a> 2015)</li>
+</ul></li>
+<li>seats at cabinet formation date
+<ul>
+<li>not coded for each instance of cabinet formation</li>
+<li>calculated based on
+<ol type="1">
+<li><a href="../../..\data/table/election_result/">election result</a> <em>or</em> <a href="../../..\data/table/parliament_composition/">parliament compositiion</a> table – most recent date used</li>
+<li><a href="../../..\data/table/parliament_change/">parliament change</a> table entries after (1)</li>
+</ol></li>
+<li>used in <a href="../../..\data/table/view_cabinet/">view cabinet</a> and stored in <a href="../../..\data/table/viewcalc_parliament_composition/">viewcalc parliament composition</a></li>
+<li>see Müller and Strom (2000), Bergman ea. (2019) and <a href="erdda.org">ERDDA</a> for exact seats at cabinet formation</li>
+</ul></li>
+<li>duplicate prime minister names
+<ul>
+<li>first letter of first name added to PMs with the same last name (e.g.&nbsp;<a href="../../..\explore/DNK/cabinet/">DNK Rasmussen N</a>)</li>
+</ul></li>
+<li>country specific
+<ul>
+<li>Switzerland: changes in the identity of the President of the Swiss Confederation (Bundespräsident) do not define a new cabinet (cf.&nbsp;Kriesi/Trechsel 2008, 75-76)</li>
+<li>Iceland: two <a href="../../..\explore/ISL/cabinet/1963-11-14/">prime ministers</a> named Bjarni Benediktsson (born 1908 and 1970)</li>
+</ul></li>
+</ul>
+<p>Examples</p>
+<ul>
+<li>three month constraint
+<ul>
+<li><a href="../../..\explore/pol/cabinet/2006-07-14/">POL Kaczynski</a> (2006) — coded as one cabinet
+<ul>
+<li>SRP withdraws from cabinet on 22 September 2006 (party composition change) and re-enters on 16 October</li>
+<li>SRP and LPR dismissal on 13 August 2007 (party composition change) — elections take place on 19 October 2007 (within three months)</li>
+</ul></li>
+<li><a href="../../..\explore/bel/cabinet/2010-06-13/">BEL Leterme III</a> (2010) — coded as one cabinet (three month constraint)
+<ul>
+<li>Previous coalition collapses on 26 April 2010 (party composition change) — new elections on 13 June. Pre-election caretaker cabinets lasts for less and post-election cabinet for more than three months.</li>
+</ul></li>
+<li>further examples: <a href="../../..\explore/aut/cabinet/1962-11-18/">AUT Gorbach II</a> (1962), <a href="../../..\explore/nld/cabinet/2010-02-23/">NLD Balkenende V</a> (2010)</li>
+</ul></li>
+</ul>
+<p>Damgaard (1994: 194-95) and Müller/Strom (2000: 12) provide a more comprehensive discussion of cabinet definitions.</p>
+</section>
+<section id="caretaker" class="level4">
+<h4 class="anchored" data-anchor-id="caretaker">Caretaker</h4>
+<p>Cabinets with a limited legislative mandate (cf.&nbsp;McDonnell/Valbruzzi 2014, 664)</p>
+<ul>
+<li>non-partisan: cabinet members without partisan affiliation</li>
+<li>provisional: appointed post-transition cabinet</li>
+<li>technical: institutional reasons</li>
+<li>continuation: remaining in office (see ‘three month rule’ above)
+<ul>
+<li>resignation of PM or cabinet</li>
+<li>dissolution of parliament</li>
+<li>after election until new cabinet forms</li>
+</ul></li>
+</ul>
+</section>
+<section id="cabinet-type" class="level4">
+<h4 class="anchored" data-anchor-id="cabinet-type">Cabinet type</h4>
+<p>Cabinet status (minority, minimum winning or surplus majority) is determined only by the seat share of cabinet parties in parliament and not coded manually.</p>
+<p>If there is an electoral alliance with separate seat shares but one of the parties is not a cabinet member, the cabinet will be treated as a minority cabinet (eg. UK 1951). Similarly, if any of the governing parties can be removed and the other governing parties still hold a majority in parliament, the cabinet is considered to be a surplus majority cabinet.</p>
+</section>
+<section id="cabinet-termination" class="level4">
+<h4 class="anchored" data-anchor-id="cabinet-termination">Cabinet termination</h4>
+<p><em>Experimental version only</em> — coding incomplete</p>
+<p>The events that define a new cabinet are used to define the termination date. Cabinets may remain in office for a short period after the initial terminal event. The ‘description’ gives a short description of eventsthat led to the end of a cabinet.</p>
+</section>
+<section id="confidence-votes" class="level4">
+<h4 class="anchored" data-anchor-id="confidence-votes">Confidence votes</h4>
+<p><em>Experimental version only</em> — coding incomplete</p>
+<p>Confidence votes are added for all recent cabinets but are not included for all cabinets in ParlGov.</p>
+<ul>
+<li>investiture (confidence) votes for new cabinets</li>
+<li>confidence votes that lead to the termination of a cabinet</li>
+<li>important (won) confidence votes.</li>
+</ul>
+<p>Details</p>
+<ul>
+<li>cabinet desription includes a brief entry for a confidence vote</li>
+<li>constructive vote of no confidence
+<ul>
+<li>coded for outgoing cabinet (eg. <a href="../../..\explore/deu/cabinet/1980-11-05/">DEU Schmitt III</a>, <a href="../../..\explore/ESP/cabinet/2016-10-29/">ESP Rajoy IV</a>)</li>
+</ul></li>
+</ul>
+</section>
+<section id="presidents" class="level4">
+<h4 class="anchored" data-anchor-id="presidents">Presidents</h4>
+<p>Party-affiliated heads of state but not short-term acting presidents. See table <a href="../../..\data/table/politician_president/">president</a>.</p>
+</section>
+<section id="data-sources-1" class="level4">
+<h4 class="anchored" data-anchor-id="data-sources-1">Data sources</h4>
+<p>For new cabinets and revisions of observations, we derive information about cabinet termination from news sources, preferably from the news agencies Reuters, AFP or the main national news agency</p>
+<p>For West European countries we double checked our initial observations with the data in Müller/Strom (2000). For Central- and Eastern European countries we compared our information to Müller-Rommel ea. (2008).</p>
+<ul>
+<li>EJPR yearbook (1990–today) — <a href="http://www.politicaldatayearbook.com/">politicaldatayearbook.com</a></li>
+<li>European Representative Democracy Data Archive — <a href="http://erdda.se/index.php/projects/erd">erdda.se</a></li>
+<li>Müller/Strom (2000) — Western Europe (1945–2000)</li>
+<li>Müller-Rommel ea. (2008) and Conrad/Golder (2010) — Central/Eastern Europe (1990—2009)</li>
+<li>Flora (1983) — inter-war cabinets</li>
+<li>Wikipedia</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="countries" class="level2">
+<h2 class="anchored" data-anchor-id="countries">Countries</h2>
+<section id="country-notes" class="level3">
+<h3 class="anchored" data-anchor-id="country-notes">(_) Country notes</h3>
+<p>Summary of main institutional rules and respective changes, data and news sources, references, coding comments, open questions and remaining tasks.</p>
+<p>Electoral system information from <a href="http://www.electiondataarchive.org/">CLEA</a> country descriptions (Appendix I), <a href="http://www.electoralsystemchanges.eu/">ESCE</a> country summaries, <a href="http://www.ipu.org/parline-e/parlinesearch.asp">IPU-PARLINE</a> electoral system summary, Mackie and Rose (1991), Rokkan and Meyriat (1969)</p>
+<p>Cabinet information in Müller and Strøm (2000) and Bergman ea. (2019), see also <a href="http://www.erdda.se/">ERDDA.se</a> data.</p>
+<p>Country information about democratisation from Boix ea. (2013).</p>
+<p><em>Abbreviations</em> — proportional representation (PR), single transferable vote (STV)</p>
+<p><em>Additional sources</em> — <a href="https://v-dem.net/">V-Dem</a> and <a href="https://sites.google.com/a/nyu.edu/adam-przeworski/home/data">PIPE</a> data – female suffrage (see <a href="http://www.ipu.org/wmn-e/suffrage.htm">IPU</a>)</p>
+<p><em>Note:</em> This is an evolving and incomplete documentation of country specific information.</p>
+</section>
+<section id="australia" class="level3">
+<h3 class="anchored" data-anchor-id="australia">Australia</h3>
+<p>Information</p>
+<ul>
+<li>federal parliamentary constitutional monarchy</li>
+<li>head of state is the monarch of UK</li>
+<li>independence in 1901</li>
+<li>full male suffrage by 1900, female suffrage in 1902</li>
+<li>alternative vote (AV) introduced in 1918</li>
+</ul>
+<p>Data sources online</p>
+<ul>
+<li><a href="http://www.aec.gov.au/Parties_and_Representatives/">party register</a></li>
+<li><a href="http://results.aec.gov.au/">official election results</a></li>
+<li><a href="http://www.aph.gov.au/library/handbook/">Parliamentary Handbook of the Commonwealth of Australia</a></li>
+<li><a href="http://www.aph.gov.au/library/pubs/rp/2008-09/09rp17.htm">federal election results 1901–2007</a></li>
+<li><a href="http://elections.uwa.edu.au">Australian Government and Politics Database</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="http://www.radioaustralianews.net.au/tags.htm?tag=region:australia">Radio Australia News</a></li>
+<li><a href="http://www.theaustralian.com.au/">The Australian</a></li>
+<li><a href="http://www.smh.com.au/national">The Sydney Morning Herald</a></li>
+</ul>
+<p>References</p>
+<ul>
+<li>Colin Hughes, und Bruce Desmond Graham. 1968. A handbook of Australian government and politics, 1890-1964. Canberra: Australian National University Press.</li>
+<li>Hughes, Colin. 1977. A handbook of Australian government and politics, 1965-1974. Canberra: Australian National University Press.</li>
+<li>———. 1986. A handbook of Australian government and politics, 1975-1984. Sydney, New York: Australian National University Press.</li>
+<li>———. 2002. A handbook of Australian government and politics, 1985-1999. Annandale N.S.W.: Federation Press.</li>
+</ul>
+<p>Coding comments</p>
+<ul>
+<li>Barber (2008) distinguishes the number of eligible voters between ‘enrolled’ and ‘enrolled divisions’. Enrolled figures represent the total number of eligible voters, while enrolled division figures include only eligible voters in contested districts. The distinction applies to elections between 1901 and 1943.</li>
+</ul>
+<p>Todo later</p>
+<ul>
+<li>check and revise LDP election results 2010–2019</li>
+<li>coding of the special district Northern territory (see Barber 2008)</li>
+</ul>
+</section>
+<section id="austria" class="level3">
+<h3 class="anchored" data-anchor-id="austria">Austria</h3>
+<p>Information</p>
+<ul>
+<li>federal parliamentary republic</li>
+</ul>
+<p>Data sources online</p>
+<ul>
+<li><a href="https://www.bundeskanzleramt.gv.at/en.html">Federal Chancellery</a></li>
+<li><a href="http://www.bmi.gv.at/412/Nationalratswahlen/">elections</a></li>
+<li><a href="http://www.parlament.gv.at/WWER/BREG/REG/">cabinets and ministers</a></li>
+<li><a href="http://www.historisch.apa.at/cms/apa-historisch/start.html">Meldungen der APA - Austria Presse Agentur aus den Jahren 1955-1985</a></li>
+<li><a href="http://austria-forum.org/af/AEIOU/Bundesregierung">AEIOU Österreich-Lexikon cabinets</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="http://www.thelocal.at/page/view/politics">The Local</a></li>
+</ul>
+<p>Open questions</p>
+<ul>
+<li>number of votes for VGO in 1983 election differ between BMI and statistical yearbook</li>
+<li>date of acceptance for the resignation of Figl III cabinet needed</li>
+<li>formal resignation dates for cabinets after 1996 needed, not covered by Müller/Strom 2000</li>
+</ul>
+</section>
+<section id="belgium" class="level3">
+<h3 class="anchored" data-anchor-id="belgium">Belgium</h3>
+<p>Information</p>
+<ul>
+<li>federal parliamentary constitutional monarchy</li>
+<li>full male suffrage in 1893 election, female suffrage in 1948</li>
+<li>PR (D’Hondt) in 1900</li>
+</ul>
+<p>Data sources online</p>
+<ul>
+<li><a href="http://www.ibzdgip.fgov.be">Belgische verkiezingsuitslagen</a> (French/Dutch)</li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="http://www.deredactie.be/cm/vrtnieuws.english">Flandersnews</a></li>
+</ul>
+<p>Coding comments</p>
+<ul>
+<li>due to plural voting, the number of total votes is higher than the number of electorate in elections from 1904 to 1914</li>
+<li>data in IBZ and Nohlen/Stöver is not consistent</li>
+</ul>
+<p>Open questions</p>
+<ul>
+<li>seat distribution of parties in electoral alliances
+<ul>
+<li>FDF-PPW alliance in 1991 election</li>
+<li>PRL/FDF alliance in 1995 election
+<ul>
+<li>seat distribution</li>
+<li>informaton about PPW (Pari pour la Wallonie)</li>
+</ul></li>
+<li>SPA/Spirit in 2003 election</li>
+<li>CD&amp;V/N-VA in 2007 election</li>
+</ul></li>
+</ul>
+</section>
+<section id="bulgaria" class="level3">
+<h3 class="anchored" data-anchor-id="bulgaria">Bulgaria</h3>
+<p>Information</p>
+<ul>
+<li>unitary parliamentary republic</li>
+</ul>
+<p>Data sources online</p>
+<ul>
+<li><a href="http://www.cik.bg/">official election results</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="http://bnr.bg/en/politics/list">Radio Bulgaria</a></li>
+<li><a href="http://www.novinite.com/articles/category/2/Politics">Novinite</a></li>
+</ul>
+<p>Coding comments</p>
+<ul>
+<li>1990 election is not coded since no official results are available (see Nohlen/Stöver 2010: 367). Consequently, the cabinets of Lukanov and Popov are not coded in ParlGov neither.</li>
+</ul>
+<p>Open questions</p>
+<ul>
+<li>coding of BSP coalitions – national and EP
+<ul>
+<li>seat distribution of Democratic Left (1997) and Coalition for Bulgaria (2001, 2005, 2009), esp.&nbsp;seat share of BSP after 2005 election</li>
+<li>BSP not running as coalition in 2019 EP election?</li>
+</ul></li>
+<li>missing cyrillic party names</li>
+<li>“electorate” 2009 EP election</li>
+</ul>
+<p>Todo later</p>
+<ul>
+<li>double check Blue Coalition EP Elections 2009</li>
+</ul>
+</section>
+<section id="canada" class="level3">
+<h3 class="anchored" data-anchor-id="canada">Canada</h3>
+<p>Information</p>
+<ul>
+<li>federal parliamentary constitutional monarchy</li>
+<li>head of state is the monarch of UK</li>
+<li>full male suffrage by 1900 and female suffrage in 1918</li>
+</ul>
+<p>Data sources online</p>
+<ul>
+<li><a href="http://www.elections.ca/res/rep/off/ovr2015app/home.html#1">Elections Canada</a></li>
+<li><a href="http://canadianelectionsdatabase.ca">Canadian Elections Database</a></li>
+<li><a href="https://pm.gc.ca/">Prime Minister of Canada</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="http://www.rcinet.ca/english/news/">Radia Canada</a> – <a href="http://www.cbc.ca/">CBC</a></li>
+</ul>
+<p>Coding comments</p>
+<ul>
+<li>the data sources on election results before (and after) 1945 are often incosistent</li>
+</ul>
+</section>
+<section id="croatia" class="level3">
+<h3 class="anchored" data-anchor-id="croatia">Croatia</h3>
+<p>Data sources online</p>
+<ul>
+<li><a href="https://www.izbori.hr/">Croatian State Electoral Commission</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="http://www.total-croatia-news.com/news/politics">Total Croatia News</a></li>
+</ul>
+<p>Coding comments</p>
+<ul>
+<li>official election results are not aggregated at the national level</li>
+<li>voting results for 10 MMC districts recorded</li>
+<li>votes cast on alliance level as votes cast for each alliance member do not add up to total votes cast for an alliance</li>
+</ul>
+<p>Open questions</p>
+<ul>
+<li>status and seat strength of parliamentary groups (esp.&nbsp;for electoral alliances)</li>
+<li>seats LIBRA and DC after formation through split (relevant for cabinets)</li>
+<li>2000 election: 3 no-party seats from ethnic minority district?</li>
+<li>2007 election: results also recorded for 10 MMC districts only?</li>
+</ul>
+<p>Todo later</p>
+<p>Data sources are incomplete and inconsistent to meet ParlGov coding rules.</p>
+<ul>
+<li>aggregated number of votes for national, abroad and minority district needed</li>
+<li>information about all parties with more than 1.0% vote share needed</li>
+<li>primary sources about electoral alliances and members needed</li>
+</ul>
+</section>
+<section id="cyprus" class="level3">
+<h3 class="anchored" data-anchor-id="cyprus">Cyprus</h3>
+<p>Information</p>
+<ul>
+<li>only <em>presidential system</em> in ParlGov</li>
+</ul>
+<p>Data sources online</p>
+<ul>
+<li><a href="http://results.elections.moi.gov.cy">election results</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="http://www.cyprus-mail.com">Cyprus Mail</a></li>
+</ul>
+<p>Coding comments</p>
+<ul>
+<li>Cyprus has a presidential form of government. Therefore, cabinet start dates may not coincide with election dates. Presidential cabinets are coded according to ParlGov coding rules.</li>
+</ul>
+<p>Open questions</p>
+<ul>
+<li>election 2001: official sources needed — votes from Parline do not add up</li>
+</ul>
+<p>Todo later</p>
+<ul>
+<li>add primary sources for Wikipedia based coding (national elections: votes for parties with no seats)</li>
+</ul>
+</section>
+<section id="czech-republic" class="level3">
+<h3 class="anchored" data-anchor-id="czech-republic">Czech Republic</h3>
+<p>Information</p>
+<ul>
+<li>Unitary parliamentary republic</li>
+</ul>
+<p>Data sources online</p>
+<ul>
+<li><a href="http://www.volby.cz/index_en.htm">official election results</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="http://www.radio.cz/en/section-archive-calendar/news/">Radio.cz</a> (archive 1998-today)</li>
+<li><a href="http://www.praguemonitor.com/news">Prague Monitor</a></li>
+<li><a href="http://www.praguepost.com/news">Prague Post</a></li>
+</ul>
+<p>Open questions</p>
+<ul>
+<li>When crossed members of the rebel faction from ODS to US/DEU? – January 1998</li>
+<li>seat distribution LSU alliance 1992</li>
+</ul>
+</section>
+<section id="denmark" class="level3">
+<h3 class="anchored" data-anchor-id="denmark">Denmark</h3>
+<p>Information</p>
+<ul>
+<li>unitary parliamentary constitutional monarchy</li>
+<li>full male suffrage in 1849 election, female suffrage in 1915</li>
+<li>plurality SMD in 1894</li>
+<li>cabinet responsibility in 1901</li>
+<li>PR (D’Hondt) in 1918</li>
+</ul>
+<p>Data sources online</p>
+<ul>
+<li><a href="http://www.dst.dk/valg/index.htm">Danmarks Statistiks valghjemmeside</a> (election results)</li>
+<li><a href="http://www.dst.dk/aarbogsarkiv">Statistisk Årbog</a> (Statistical Yearbook)</li>
+<li><a href="http://www.ft.dk/Dokumenter/Publikationer/Tal%20og%20Fakta.aspx">Tal og Fakta</a> – Valg og tendenser, Regeringer 1953–2007</li>
+<li><a href="http://www.denstoredanske.dk/">Den Store Danske Encyklopædi</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="http://www.thelocal.dk/page/view/politics">The Local DK</a></li>
+</ul>
+<p>References</p>
+<ul>
+<li>Elklit, J., 2002. The politics of electoral system development and change: The Danish case. In The evolution of electoral and party systems in the Nordic countries. New York: Agathon Press, pp.&nbsp;15-66. [evolution electoral system]</li>
+</ul>
+<p>Coding comments</p>
+<ul>
+<li><a href="http://dev.parlgov.org/data/dnk/party/1634/">‘Grønland og Færøerne’</a> coded as one party to include results of regional parties from Greenland and Faroer Island
+<ul>
+<li>we add all parties which won at least one seat in Greenland or Faroer</li>
+<li>we only code the seats of the affected parties</li>
+</ul></li>
+<li>coding of election results 1901 and 1903 based on Mackie and Rose (1991) due to missing data in Nohlen and Stöver (2010)</li>
+</ul>
+<p>Todo later</p>
+<ul>
+<li>add election results for Greenland and Faroe Islands – currently coded as one party</li>
+<li>add causes of government termination and minority support parties from Damgaard (1994)</li>
+</ul>
+</section>
+<section id="estonia" class="level3">
+<h3 class="anchored" data-anchor-id="estonia">Estonia</h3>
+<p>Data sources online</p>
+<ul>
+<li><a href="http://www.vvk.ee/?lang=en">National Electoral Committee</a></li>
+<li><a href="https://www.erakonnad.info/">History of Estonian Political Parties</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="http://news.err.ee/">Estonian Public Broadcasting</a></li>
+<li><a href="http://www.baltictimes.com/news_estonia/">The Baltic Times</a></li>
+</ul>
+<p>Open questions</p>
+<ul>
+<li>seats EKK alliance members 1995</li>
+<li>founding of Parempoolsed in 1992 parliament
+<ul>
+<li>How many members defected?</li>
+<li>When did the split happen?</li>
+</ul></li>
+</ul>
+<p>References</p>
+<ul>
+<li>National Electoral Committee. 2016. <a href="https://www.riigikogu.ee/wpcms/wp-content/uploads/2015/02/Elections_in_Estonia_1992_2015.pdf">Elections in Estonia 1992-2015</a>. Tallinn.</li>
+</ul>
+<p>Todo later</p>
+<ul>
+<li>coding of alliance members (eg. RKI 1992)</li>
+</ul>
+</section>
+<section id="finland" class="level3">
+<h3 class="anchored" data-anchor-id="finland">Finland</h3>
+<p>Information</p>
+<ul>
+<li>independence in 1917</li>
+<li>universal suffrage in 1906</li>
+<li>PR (D’Hondt) in 1906, 200 seats, single-chamber [no fundamental changes]</li>
+</ul>
+<p>Data sources online</p>
+<ul>
+<li><a href="https://vaalit.fi/etusivu">Elections – Ministery of Justice Finland</a></li>
+<li><a href="http://tilastokeskus.fi/til/vaa_en.html">official election results</a></li>
+<li><a href="http://www.government.fi/tietoa-valtioneuvostosta/hallitukset/en.jsp">cabinets and ministers</a></li>
+<li><a href="http://www.vaalit.fi/15485.htm">registered parties</a></li>
+<li><a href="http://fi.wikipedia.org/wiki/Luettelo_eduskuntaryhm%C3%A4%C3%A4_vaalikauden_aikana_vaihtaneista_kansanedustajista">parliamentary group changes</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="http://www.yle.fi/uutiset/news/">YLE</a></li>
+<li><a href="http://www.helsinkitimes.fi/finland/finland-news/politics.html">Helsinki Times</a></li>
+</ul>
+<p>References</p>
+<ul>
+<li>Sundberg, J., 2002. The electoral system of Finland: old, and working well. In The evolution of electoral and party systems in the Nordic countries. New York: Agathon Press, p.&nbsp;67–100. [electoral system evolution]</li>
+<li>Törnudd, K., 1968. The electoral system of Finland, London: Evelyn. [electoral system evolution]</li>
+</ul>
+<p>Coding comments</p>
+<ul>
+<li><a href="http://dev.parlgov.org/data/246/party/26/">‘Suomen Puolue / Perussuomalaiset’</a> coded as one parties
+<ul>
+<li>legally these are two parties – see comment in party observation</li>
+</ul></li>
+<li>RKP-SFP private government member in <a href="http://dev.parlgov.org/data/246/cab/party/19590/">Sukselainen IV</a> coded</li>
+</ul>
+<p>Open questions</p>
+<ul>
+<li>number of SD-o MPs supporting Sukselainen II cabinet</li>
+</ul>
+<p>Todo later</p>
+<ul>
+<li>change “no seats” election result “description” entry into ‘English party name (Finnish party name)’</li>
+<li>code registration and dissolution of parties since 1969</li>
+<li>Swedish party names for all parties (if appropriate)</li>
+</ul>
+</section>
+<section id="france" class="level3">
+<h3 class="anchored" data-anchor-id="france">France</h3>
+<p>Information</p>
+<ul>
+<li>full male suffrage in 1848 and female suffrage in 1944 (Mackie and Rose 1991, 131-33)</li>
+<li>two round majority-plurality SMD and PR periods
+<ul>
+<li>1889 SMD, 1919 mixed member system, 1928 SMD, 1945 PR, 1958 SMD, 1986 PR, 1988 SMD</li>
+</ul></li>
+<li>parliamentary system in 1870 and president elected by both chambers; semi-presidential system in 1958</li>
+</ul>
+<p>Data sources online</p>
+<ul>
+<li><a href="http://www.interieur.gouv.fr/sections/a_votre_service/elections/resultats">Elections – Les résultats</a></li>
+<li><a href="http://www.france-politique.fr">France Politique</a></li>
+<li>Election results and parliament composition <a href="http://www.assemblee-nationale.fr/histoire/leg4rep.asp">1945-1958</a> and <a href="http://www.assemblee-nationale.fr/histoire/leg5rep.asp">since 1958</a></li>
+<li>Cabinets <a href="http://www.assemblee-nationale.fr/histoire/gvt4rep.asp">1945-1958</a> and <a href="http://www.assemblee-nationale.fr/histoire/gvt5rep.asp">since 1958</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="http://www.france24.com/en/france">France 24</a></li>
+<li><a href="http://www.english.rfi.fr/france">RFI</a></li>
+</ul>
+<p>Coding comments</p>
+<ul>
+<li>“‘Comparativly, France has the most poorly documented electoral statistics.’ This statement of Daniele Caramani (2000) must be underlined for various reasons. (…)” (Nohlen 2010, 670). Hence, our coding may include inconsistencies and would profit from feedback by country experts.</li>
+<li>Mackie/Rose election data exclude Algeria and the overseas territories and departments</li>
+<li>Paloheimo (1984) cabinet parties that could not be identified: Gauche Democrats, Movement of Democrats, Payson</li>
+<li>seat strength for some cabinet parties before 1945 unknown – eg. <a href="http://www.parlgov.org/explore/fra/cabinet/1925-04-17/">Painleve 1925</a></li>
+</ul>
+<p>Open questions</p>
+<ul>
+<li>How many votes won the Southern League in the legislative election 2012?</li>
+<li>for pre 1945 Wikipedia lists several additional cabinets (no PM or party change), more information needed</li>
+</ul>
+<p>Todo later</p>
+<ul>
+<li>double check and update cabinet coding with <a href="https://erdda.org">ERDDA</a> update Müller/Strom (release in 2021)</li>
+<li>code composition of parliamentary groups (see Mackie and Rose 1991, 133)</li>
+</ul>
+</section>
+<section id="germany" class="level3">
+<h3 class="anchored" data-anchor-id="germany">Germany</h3>
+<p>Information</p>
+<ul>
+<li>federal parliamentary republic</li>
+</ul>
+<p>Data sources online</p>
+<ul>
+<li><a href="http://www.bundeswahlleiter.de/de/bundestagswahlen/fruehere_bundestagswahlen/">Bundeswahlleiter</a></li>
+<li><a href="http://wahlen-in-deutschland.de">Wahlen in Deutschland</a></li>
+<li>biographical information: <a href="https://www.munzinger.de/search/query?query.id=query-00">Munzinger-Archiv</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="https://www.dw.com/en/top-stories/germany/s-1432">Deutsche Welle</a></li>
+</ul>
+<p>Coding comments</p>
+<ul>
+<li>elections since 1945
+<ul>
+<li>only PR votes provided (no SMD votes from first tier)</li>
+<li>before 1990 we don’t include the MPs from Berlin (only procedural voting rights)</li>
+<li>CDU and CSU recorded as alliance with individual results for election data and as <a href="http://www.parlgov.org/explore/DEU/party/1727/">CDU/CSU party group</a> for cabinet data</li>
+</ul></li>
+<li>elections 1919 to 1933
+<ul>
+<li>some parties won additional seats in a national district (upper tier)</li>
+<li>upper tier votes are not included</li>
+<li>see details in <a href="http://www.wahlen-in-deutschland.de/wrtw.htm">Wahlen in Deutschland</a></li>
+</ul></li>
+<li>confidence votes 1919 to 1933 not coded in ParlGov - data recorded in “Formative Stages of German Politics. The Contested Rise of Parliamentary Democracy, 1867-1967” by Philip Manow and Valentin Schröder</li>
+<li>successor parties from Weimar Republic (1933) to Federal Republic (1945) mainly based on personal continuity of MPs</li>
+</ul>
+<p>References</p>
+<ul>
+<li>Stöss, R., 1986. Parteien-Handbuch: Die Parteien der Bundesrepublik Deutschland, 1945-1980, Sonderausgabe, Opladen: Westdeutsche Verlag. [core reference on post-war German parties]</li>
+<li>Lenski, S.-C., 2011. Parteiengesetz und Recht der Kandidatenaufstellung Handkommentar, Baden-Baden: Nomos-Verl.-Ges. [party law]</li>
+</ul>
+</section>
+<section id="greece" class="level3">
+<h3 class="anchored" data-anchor-id="greece">Greece</h3>
+<p>Data sources online</p>
+<ul>
+<li><a href="http://www.ypes.gr/en/Elections/">Ministry of Interior - Elections</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="https://www.amna.gr/en">Athens News Agency</a></li>
+<li><a href="http://www.ekathimerini.com">Kathimerini</a></li>
+</ul>
+<p>Open questions</p>
+<ul>
+<li>latin name for Muslim list</li>
+<li>What is an “Alternative Minister”?</li>
+<li>specification of causes for formation and termination of caretaker governments (Grivas, Zolotas I, Zolotas II)</li>
+</ul>
+<p>Todo later</p>
+<ul>
+<li>unify transliteration of greek party names</li>
+<li>coding of alliance members for <a href="http://dev.parlgov.org/data/300/party/45/">Coalition of the Radical Left</a> in election results</li>
+<li>add alliance members for 2004 and 2007 election — latter needs information about seats distribution</li>
+</ul>
+</section>
+<section id="hungary" class="level3">
+<h3 class="anchored" data-anchor-id="hungary">Hungary</h3>
+<p>Data sources online</p>
+<ul>
+<li><a href="http://valasztas.hu">National Election Office</a></li>
+</ul>
+<p>Coding comments</p>
+<ul>
+<li>‘votes’ and ‘vote_share’ coding based on list votes in territorial constituencies</li>
+</ul>
+</section>
+<section id="iceland" class="level3">
+<h3 class="anchored" data-anchor-id="iceland">Iceland</h3>
+<p>Information</p>
+<ul>
+<li>home rule in 1904; sovereignty in 1918; republic in 1944</li>
+<li>universal suffrage in 1915 election</li>
+<li>presidential election since 1944</li>
+</ul>
+<p>Data sources online</p>
+<ul>
+<li><a href="http://www.statice.is/?PageID=1316&amp;src=/temp_en/Dialog/varval.asp?ma=KOS02121%26ti=Results+of+general+elections+to+the+Althingi+1963-2007++%26path=../Database/kosningar/althurslit/%26lang=1%26units=Number/percent">Althingi 1963-2007</a></li>
+<li><a href="http://www.althingi.is/vefur/ran.html">Governments and ministers</a></li>
+<li><a href="http://timarit.is/">Tímarit.is</a> — historical documents (Icelandic)</li>
+<li><a href="http://onlinelibrary.wiley.com/doi/10.1111/j.1475-6765.2005.00234.x/abstract">Indridason 2005</a> — <em>gated</em></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="http://www.mbl.is/mm/frettir/english/">Morgunbladet</a></li>
+<li><a href="http://www.icelandreview.com/">Iceland Review</a></li>
+</ul>
+<p>References</p>
+<ul>
+<li>Jónsson, Guðmundur and Magnús S. Magnússon, eds.&nbsp;1997. Hagskinna: Sögulegar Hagtölur Um Ísland — Icelandic Historical Statistics. First Edition. Reykjavík: Hagstofa Íslands. [election results 1874 to 1991]</li>
+<li>Hardarson, Ólafur Th. 2002. ‘The Icelandic Electoral System 1844-1999’. Pp. 101–66 in The evolution of electoral and party systems in the Nordic countries. New York: Agathon Press. [evolution electoral system]</li>
+</ul>
+<p>Coding comments</p>
+<ul>
+<li>transcriptions Icelandic letters into ascii: ‘th’ for ‘þ’, ‘d’ for ‘ð’, ‘ae’ for ‘æ’</li>
+</ul>
+</section>
+<section id="ireland" class="level3">
+<h3 class="anchored" data-anchor-id="ireland">Ireland</h3>
+<p>Information</p>
+<ul>
+<li>independence in 1922</li>
+<li>STV-PR in 1922</li>
+</ul>
+<p>Data sources online</p>
+<ul>
+<li><a href="http://electionsireland.org">ElectionsIreland.org</a></li>
+<li><a href="http://www.irisoifigiuil.ie/">Iris Oifigiúil (Irish State News)</a></li>
+<li><a href="http://www.oireachtas.ie/parliament/about/publications/registerofpoliticalparties/">Register of Political Parties</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="http://www.rte.ie/news/">RTÉ News</a></li>
+<li><a href="http://www.irishtimes.com/">The Irish Times</a></li>
+</ul>
+<p>References</p>
+<ul>
+<li>Barberis, Peter. 2005. Encyclopedia of British and Irish Political Organizations: Parties, Groups and Movements of the 20th Century. New York; London: Continuum.</li>
+<li>Gallagher, Michael. 1993. Irish Elections 1922-44: Results and Analysis. Limerick: PSAI Press.</li>
+<li>Gallagher, Michael. 2009. Irish Elections 1948-77: Results and Analysis. Routledge.</li>
+</ul>
+<p>Coding comments</p>
+<ul>
+<li>Outgoing chairperson of the lower house is automatically re-elected. Seat is added to the respective party (‘data_json’ keys: ‘seats_uncontested’, ‘outgoing_chairperson’).</li>
+<li>due to the STV-PR it is not possible to specify a certain number of absolute votes per party</li>
+<li>when coding the absolute votes per party we count the number of first preferences, which is common practice</li>
+</ul>
+</section>
+<section id="israel" class="level3">
+<h3 class="anchored" data-anchor-id="israel">Israel</h3>
+<p>Information</p>
+<ul>
+<li>cabinet status of ministers (cf.&nbsp;Kenig 2014, 181)
+<ul>
+<li>cabinet ministers — are members of cabinet meetings with voting right in the cabinet plenum. This includes <em>ministers without portfolio</em>.</li>
+<li>deputy ministers — <em>do not</em> attend cabinet meetings and <em>do not</em> have voting rights. This applies also in [rare] cases of deputy ministers in a government ministry without a minister “above” them.</li>
+<li>Source: Ofer Kenig, Ashkelon College; personal communication, 28 March 2020</li>
+</ul></li>
+<li>direct election of prime minister between 1996 and 2003</li>
+</ul>
+<p>Data sources online</p>
+<ul>
+<li><a href="http://www.knesset.gov.il/description/eng/eng_mimshal_res.htm">Knesset election results</a></li>
+<li><a href="http://www.cbs.gov.il/reader/?MIval=cw_usr_view_SHTML&amp;ID=445">CBS · Elections and Knesset</a></li>
+<li><a href="http://www.knesset.gov.il/govt/eng/GovtByNumber_eng.asp">cabinet ministers</a> and <a href="http://www.knesset.gov.il/faction/eng/FactionGovernment_eng.asp">cabinet parties</a> (minister list used for cabinet coding)</li>
+<li><a href="http://www.knesset.gov.il/history/eng/eng_hist_all.htm">description events elections and governments</a></li>
+<li><a href="https://main.knesset.gov.il/EN/mk/apps/faction/faction-lobby">parliamentary groups</a></li>
+<li><a href="http://www.knesset.gov.il/faction/eng/FactionHistoryAll_eng.asp">changes in parliament</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="https://www.timesofisrael.com/">Times of Israel</a></li>
+</ul>
+<p>Coding comments</p>
+<ul>
+<li>ministers without portfolio coded as cabinet parties and deputy ministers as cabinet support parties (see above and thanks to Or Tuttnauer for support in 2020)</li>
+<li>cabinets continuing in office (no resignation or lost confidence vote) after an early dissolution of parliament are coded as “continuation caretaker cabinet” (e.g.&nbsp;<a href="http://www.parlgov.org/explore/isr/cabinet/2014-12-02/">Netanyahu 2014</a>)</li>
+<li>cabinet support parties coded for deputy ministers and Arab satellite lists</li>
+<li>all changes in parliament included based on <a href="http://www.knesset.gov.il/faction/eng/FactionHistoryAll_eng.asp">Knesset information</a></li>
+<li>seats for alliance members of United Torah Judaism to be included with a ‘data_json’ key if available</li>
+<li>minor differences in the composition of party lists (esp.&nbsp;electoral alliances)
+<ul>
+<li>not coded as “party change” for consecutive elections</li>
+<li>changes of the name and composition are mainly recorded in “description”</li>
+</ul></li>
+</ul>
+</section>
+<section id="italy" class="level3">
+<h3 class="anchored" data-anchor-id="italy">Italy</h3>
+<p>Data sources online</p>
+<ul>
+<li><a href="http://elezionistorico.interno.it/">Archivio Storico delle Elezioni</a> — Ministero dell’Interno</li>
+<li><a href="http://www3.istat.it/dati/catalogo/20101119_00/contenuti.html">Annuario statistico italiano 2002</a></li>
+<li><a href="http://it.wikipedia.org/wiki/Deputati_della_XV_Legislatura_della_Repubblica_Italiana">Composition parliament</a></li>
+<li><a href="http://dati.camera.it/it/">dati.camera.it</a></li>
+</ul>
+<p>News in English:</p>
+<ul>
+<li><a href="http://www.ansa.it/web/notizie/rubriche/english/english.shtml">ANSA</a></li>
+<li><a href="http://www.corriere.it/english/">Corriere della Sera</a></li>
+</ul>
+<p>Coding comments</p>
+<ul>
+<li>Non-partisan prime ministers coded <a href="http://www.parlgov.org/explore/ita/party/2001/">PC</a> to avoid false matches with election results.</li>
+<li>Parliamentary seats for foreign Italians and the seat of Aosta Valley are determined separately. They are added to the “normal” Italian results</li>
+</ul>
+<p>Open questions</p>
+<ul>
+<li>coding of The Coalition electoral alliance</li>
+</ul>
+</section>
+<section id="japan" class="level3">
+<h3 class="anchored" data-anchor-id="japan">Japan</h3>
+<p>Data sources online</p>
+<ul>
+<li><a href="http://www.soumu.go.jp/senkyo/senkyo_s/data/index.html">Ministry of Internal Affairs and Communications</a></li>
+<li><a href="http://www.kantei.go.jp/foreign/archives_e.html">Cabinets since 1996</a></li>
+</ul>
+<p>News in English:</p>
+<ul>
+<li><a href="http://www.japantimes.co.jp/">The Japan News</a>,</li>
+<li><a href="http://www3.nhk.or.jp/daily/english/politics.html">NHK World</a></li>
+</ul>
+<p>Coding comments</p>
+<ul>
+<li>elections since 1994
+<ul>
+<li>only PR tier votes provided</li>
+</ul></li>
+</ul>
+<p>Open questions</p>
+<ul>
+<li>largest party that won no seats missing for most elections</li>
+<li>double check of party families by country expert</li>
+<li>change of party affiliations after 1972 election</li>
+<li>alternative source number of votes and valid votes for 1952 election. inconsistency in Mackie/Rose</li>
+</ul>
+<p>Todo later</p>
+<ul>
+<li>update seat composition of parliament at formation of cabinets with EJPR data</li>
+<li>description and final coding of cabinet formation and termination 1958 until today</li>
+<li>add ‘seats_smd’ to ‘data_json’</li>
+</ul>
+</section>
+<section id="latvia" class="level3">
+<h3 class="anchored" data-anchor-id="latvia">Latvia</h3>
+<p>Data sources online</p>
+<ul>
+<li><a href="https://www.cvk.lv/en">Central Election Commission of Latvia</a></li>
+</ul>
+<p>News in English:</p>
+<ul>
+<li><a href="http://www.lsm.lv/en/politics/politics/">Latvian Public Media</a></li>
+</ul>
+<p>Open questions</p>
+<ul>
+<li>double check coding of electoral alliances, especially whether <a href="http://dev.parlgov.org/data/lva/party/1100/">Harmony Center</a> is a party or an electoral alliance</li>
+<li>seat strength of parties in electoral alliances</li>
+<li>party family for <a href="http://www.parlgov.org/explore/lva/party/1163/">MPA-LNP</a></li>
+</ul>
+<p>Todo later</p>
+<ul>
+<li>add alliance members for EP elections</li>
+<li>double check electorate and and total votes for <a href="http://dev.parlgov.org/data/428/eu/ep/20090/">EP 2009 election</a></li>
+</ul>
+</section>
+<section id="lithuania" class="level3">
+<h3 class="anchored" data-anchor-id="lithuania">Lithuania</h3>
+<p>Information</p>
+<ul>
+<li>PM and cabinet must each pass an investiture vote (article 92 constitution; Matonyte 2019, 309-10).</li>
+<li>Government returns its power after presidential elections (article 92 constitution; Matonyte 2019, 309).</li>
+</ul>
+<p>Data sources online</p>
+<ul>
+<li><a href="http://www.vrk.lt/en/">The Central Electoral Commission of the Republic of Lithuania</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="https://www.elta.lt/en">Lithuanian News Agency</a></li>
+<li><a href="https://en.delfi.lt/">Delfi.en</a></li>
+<li><a href="http://www.lithuaniatribune.com/">Lithuania Tribune</a></li>
+<li><a href="http://www.baltictimes.com">Baltic Times</a></li>
+</ul>
+<p>Coding comments</p>
+<ul>
+<li>cabinet start date coded for PM investiture vote (incomplete, see below)</li>
+<li>new cabinet coded for resignation and investiture after presidential elections</li>
+<li>public election committees (visuomeninis rinkimų komitetas)
+<ul>
+<li>A legal form to run in an election used since 2015 as an alternative to parties</li>
+<li>We add a prefix to name (“VRK –”), name short (“K-”) and english name (“PEC –”) (e.g.&nbsp;<a href="http://www.parlgov.org/explore/ltu/party/2760/">K-AMT</a> 2019)</li>
+<li>We also add ‘data_json’ entries ‘{“party_type”: “election_committee”, “new_party”: false}’</li>
+</ul></li>
+</ul>
+<p>Open questions</p>
+<ul>
+<li>cabinet investiture votes not documented adequately with media reports</li>
+<li>party family (ideological classification) of public election committees</li>
+<li>seats for Lithuanian Liberal Union and The New Union differ between vrk and Wikipedia/Essex</li>
+<li>coding of 1990 elections <a href="http://www3.lrs.lt/pls/inter/w5_show?p_r=281&amp;p_d=3248&amp;p_k=2">96 Sajudis candidates</a></li>
+<li>seat strength of <em>Sajudzio koalicija</em> in first four cabinets and status of PM</li>
+</ul>
+<p>Todo later</p>
+<ul>
+<li>cabinets
+<ul>
+<li>complete and harmonise coding all PM and cabinet investiture votes</li>
+<li>consistent coding of cabinet start dates for investiture vote of PM</li>
+<li>coding of acting prime ministers (see Conrad/Golder 2010, 142)</li>
+</ul></li>
+<li>add ‘seats_smd’ to ‘data_json’</li>
+</ul>
+</section>
+<section id="luxembourg" class="level3">
+<h3 class="anchored" data-anchor-id="luxembourg">Luxembourg</h3>
+<p>Information</p>
+<ul>
+<li>full male suffrage in 1893 election, female suffrage in 1918</li>
+</ul>
+<p>Data sources online</p>
+<ul>
+<li><a href="http://www.elections.public.lu">elections.public.lu</a></li>
+<li><a href="http://www.gouvernement.lu/gouvernement/gouvernements-precedents/index.html">governments</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="https://luxtimes.lu/luxembourg">Luxembourg Times</a></li>
+</ul>
+<p>Coding comments</p>
+<ul>
+<li>turnout and electorate (registered votes) numbers not available for 1922-1945 (Nohlen 2010, 1245)</li>
+<li>multiple votes per voter, ‘data_json’ keys: ‘multiple_votes’ and ‘votes_total’</li>
+<li>party names are coded in Luxembourgish with a few historical exceptions in French
+<ul>
+<li>French and German party names are coded in ‘data_json’</li>
+</ul></li>
+</ul>
+</section>
+<section id="malta" class="level3">
+<h3 class="anchored" data-anchor-id="malta">Malta</h3>
+<p>Information</p>
+<ul>
+<li>self-government in 1947, UK rule in 1958, independence in 1964</li>
+<li>STV-PR in 1921</li>
+</ul>
+<p>Data sources online</p>
+<ul>
+<li><a href="https://electoral.gov.mt/Elections">Electoral Commission Malta</a></li>
+<li><a href="http://maltadata.com">Elections in Malta</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="http://www.timesofmalta.com/sections/view/local">Times of Malta</a></li>
+</ul>
+<p>Coding comments:</p>
+<ul>
+<li>due to STV-PR it is not possible to specify absolute votes per party</li>
+<li>when coding the absolute votes per party we count the number of first preferences</li>
+<li>see bonus seats in <a href="http://www.parlgov.org/explore/mlt/election/1987-05-09/">1987 election</a></li>
+</ul>
+</section>
+<section id="netherlands" class="level3">
+<h3 class="anchored" data-anchor-id="netherlands">Netherlands</h3>
+<p>Information</p>
+<ul>
+<li>full male suffrage in 1917 and female suffrage in 1919
+<ul>
+<li>1970: compulsory voting abolished</li>
+</ul></li>
+<li>two round majority-plurality SMD in 1896</li>
+<li>PR (Hare) in 1918</li>
+</ul>
+<p>Data sources online</p>
+<ul>
+<li>Elections
+<ul>
+<li><a href="http://www.verkiezingsuitslagen.nl">Databank verkiezingsuitslagen</a></li>
+<li><a href="http://www.nlverkiezingen.com/index_en.html">Dutch election results since 1918</a></li>
+</ul></li>
+<li>Cabinets
+<ul>
+<li><a href="http://www.parlement.com/9353000/1/j9vvhy5i95k8zxl/vhnnmt7jmhzl">Kabinetten per tijdvak</a></li>
+<li><a href="https://www.rijksoverheid.nl/regering/inhoud/over-de-regering/kabinetten-sinds-1945">Kabinetten sinds 1945</a></li>
+</ul></li>
+<li>Parties
+<ul>
+<li><a href="http://www.historici.nl/Onderzoek/Projecten/KPP/Partijen">Small political parties, 1918–1967</a></li>
+</ul></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="http://www.dutchnews.nl/category/politics/">DutchNews.nl</a></li>
+</ul>
+<p>Open questions</p>
+<ul>
+<li>Drees I — VVD defector party?</li>
+</ul>
+</section>
+<section id="new-zealand" class="level3">
+<h3 class="anchored" data-anchor-id="new-zealand">New Zealand</h3>
+<p>Information</p>
+<ul>
+<li>self-government (dominion) in 1907</li>
+<li>full male suffrage in 1879 and female suffrage in 1893</li>
+<li>plurality SMD in 1853 (majority-plurality SMD in 1908 and 1911)</li>
+<li>mixed member PR in 1994</li>
+</ul>
+<p>Data sources online</p>
+<ul>
+<li><a href="http://www.elections.org.nz/events/past-events">Electoral Commission</a></li>
+<li><a href="http://www.teara.govt.nz">Te Ara: The Encyclopedia of New Zealand</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="http://www.radionz.co.nz/news">Radio New Zealand</a></li>
+<li><a href="http://www.nzherald.co.nz">The New Zealand Herald</a></li>
+</ul>
+<p>Coding comments</p>
+<ul>
+<li>cabinet under same PM after elections starts when the cabinet is sworn in; legally no new cabinet (eg. <a href="http://dev.parlgov.org/data/nzl/cabinet-party/2011-12-14/">Key II</a>)</li>
+<li>data sources on election results before 1945 are inconsistent; Vowles provides the most extensive information</li>
+<li>for elections before 1945 electorate shows the number of registered voters in European constituencies; there was no electoral register in the four Maori constituencies</li>
+</ul>
+</section>
+<section id="norway" class="level3">
+<h3 class="anchored" data-anchor-id="norway">Norway</h3>
+<p>Information (Rokkan and Meyriat 1969, 262)</p>
+<ul>
+<li>full male suffrage in 1900 and female suffrage in 1907 (1913)</li>
+<li>indirect elections in 1815</li>
+<li>two round majority-plurality SMD in 1906</li>
+<li>PR (D’Hondt) in 1921</li>
+</ul>
+<p>Data sources online</p>
+<ul>
+<li><a href="http://www.nsd.uib.no/polsys/en/">Data on the Political System — PolSys</a></li>
+<li><a href="http://www.ssb.no/english/yearbook/aarbok.html">Statistical Yearbook of Norway</a></li>
+<li><a href="http://www.ssb.no/histstat/publikasjoner/histemne-24.html#P5850_140889">Stortingsvalget (Storting Elections)</a></li>
+<li><a href="https://www.regjeringen.no/en/the-government/previous-governments/governments/id410056/">Governments since 1814</a></li>
+<li><a href="http://www.nsd.uib.no/polsys/index.cfm?urlname=government&amp;lan=eng&amp;institusjonsnr=2&amp;arkivnr=20&amp;MenuItem=N1_2&amp;ChildItem=&amp;State=collapse">Archive of Ministers</a></li>
+<li><a href="http://www.snl.no/">Store norske leksikon</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="http://www.norwaynews.com/">Norway News</a></li>
+<li><a href="http://www.newsinenglish.no/category/news/">News in English</a></li>
+</ul>
+<p>References</p>
+<ul>
+<li>Svasand, L., 1985. Politiske partier, Oslo: Tiden Norsk Forlag. <a href="#parties">parties</a></li>
+<li>Nordby, T., 1985. Storting og regjering 1945–1985: Institusjoner, rekruttering, Oslo: Kunnskapsforlaget. <a href="#cabinets">cabinets</a></li>
+<li>Aardal, B., 2002. Electoral Systems in Norway. In The evolution of electoral and party systems in the Nordic countries. New York: Agathon Press, pp.&nbsp;167–224. [evolution electoral system]</li>
+</ul>
+<p>Todo later</p>
+<ul>
+<li>code results for joint lists</li>
+<li>update pre-1973 election data with results from official election reports</li>
+<li>code all cabinet appointment and resignation dates from regjeringen.no</li>
+</ul>
+<p>Coding comments</p>
+<ul>
+<li>Bokmål used for original names</li>
+</ul>
+</section>
+<section id="poland" class="level3">
+<h3 class="anchored" data-anchor-id="poland">Poland</h3>
+<p>Data sources online</p>
+<ul>
+<li><a href="http://www.pkw.gov.pl">PKW</a> — National Electoral Commission</li>
+</ul>
+<p>News in English:</p>
+<ul>
+<li><a href="http://www.thenews.pl">Polskie Radio (Polish Radio)</a></li>
+<li><a href="http://www.warsawvoice.pl">The Warsaw Voice</a></li>
+</ul>
+<p>References</p>
+<ul>
+<li>Paszkiewicz, K., 2004. Partie i koalicje polityczne III Rzeczypospolitej 3rd ed., Wroclaw: Wydawnictwo Uniwersytetu Wroclawskiego. [party almanac]</li>
+</ul>
+<p>Coding comments</p>
+<ul>
+<li>Müller-Rommel ea. (2004) and Conrad/Golder (2010) code the 28/29 April 1993 as the begin of Suchocka II government. However, the Suchocka I government failed a confidence vote on 28 May 1993 and continued as a caretaker cabinet until its resignation on 18 October 1993.</li>
+<li>German Minority Party (MN) support not included in <a href="../../..\data/table/cabinet_support/">cabinet_support</a> table. Bergman ea. (2019) mention that since 1991 every government has been supported by the MN.</li>
+</ul>
+<p>Open questions</p>
+<ul>
+<li>seats of ‘Democratic Left Alliance’ and ‘Labor Union’ in parliament after [2001 election]
+<ul>
+<li>coding of <a href="http://en.wikipedia.org/wiki/Democratic_Left_Alliance-Labor_Union">split alliance</a></li>
+</ul></li>
+<li>SDLP 2005 election — Zieloni and UP on SDLP list or an alliance</li>
+<li>should Pawlak I government be kept? — needs more explicit cabinet definition</li>
+<li>exact date of PPPP split into PPG and MP unknown</li>
+<li>party name change — UW to PD: exact day/month of the change?</li>
+</ul>
+<p>Todo later</p>
+<ul>
+<li>double-check and revise party coding (esp.&nbsp;successor/predecessor) with Paszkiewicz (2004)</li>
+<li>re-coding of 1989 election</li>
+<li>coding of SLD alliance members for elections</li>
+<li>coding of changes in composition of parliament as documented in EJPR Political Data Yearbook</li>
+</ul>
+</section>
+<section id="portugal" class="level3">
+<h3 class="anchored" data-anchor-id="portugal">Portugal</h3>
+<p>Data sources online</p>
+<ul>
+<li><a href="http://eleicoes.cne.pt">Portuguese National Election Commission</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="http://www.theportugalnews.com/news/news">The Portugal News</a></li>
+</ul>
+<p>Open questions</p>
+<ul>
+<li>Should 1975 assembly election and succeeding cabinets be excluded?</li>
+<li>How long was ID party member of CDU alliance since 1987 election?</li>
+<li>double checking of 1980 election – PSD and PS alliance and district seats</li>
+<li>Who and from which party was the third successful candidate in the CDU alliance in the EP election in 1987?</li>
+<li>Should BE election results be coded as electoral alliance with separate observations for alliance members?</li>
+</ul>
+<p>Todo later</p>
+<ul>
+<li>find primary sources for members of electoral alliances (currently Mackie/Rose (1991) and Wikipedia)</li>
+</ul>
+</section>
+<section id="romania" class="level3">
+<h3 class="anchored" data-anchor-id="romania">Romania</h3>
+<p>Information</p>
+<ul>
+<li>district-ordered list system in 2008 and 2012 election</li>
+<li>party-list PR since 2016
+<ul>
+<li>multi-seat districts (M=7)</li>
+<li>5% threshold for parties and 8 to 10% for electoral alliances</li>
+</ul></li>
+</ul>
+<p>Data sources online</p>
+<ul>
+<li><a href="http://www.bec.ro/">Biroul Electoral Central</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="http://www.agerpres.ro/english/index.php/english.html">AGERPRES</a></li>
+<li><a href="http://www.actmedia.eu/">ACTMedia</a></li>
+</ul>
+<p>Todo later</p>
+<ul>
+<li><a href="http://www.cdep.ro/pls/parlam/structura.gp?leg=1996&amp;idl=2">seat distribution</a> in parliament after elections</li>
+</ul>
+</section>
+<section id="slovakia" class="level3">
+<h3 class="anchored" data-anchor-id="slovakia">Slovakia</h3>
+<p>Data sources online</p>
+<ul>
+<li><a href="https://slovak.statistics.sk/">official election results</a></li>
+<li><a href="http://portal.statistics.sk/showdoc.do?docid=16037">Statistical Yearbooks of the Slovak Republic</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="http://spectator.sme.sk">The Slovak Spectator</a> (online archive starting in 1995)</li>
+<li><a href="http://en.rsi.rtvs.sk/articles/news">Radio Slovakia International</a></li>
+</ul>
+<p>Open questions</p>
+<ul>
+<li>Party of the Hungarian Coalition (MK)
+<ul>
+<li>seats distribution and parliamentary party group status in 1990</li>
+<li>parliamentary party group status in 1990</li>
+</ul></li>
+<li>exact seat strength of split parties in Moravcik cabinet</li>
+<li>parliamentary status of Simko SDKU splinter group</li>
+</ul>
+</section>
+<section id="slovenia" class="level3">
+<h3 class="anchored" data-anchor-id="slovenia">Slovenia</h3>
+<p>Data sources online</p>
+<ul>
+<li><a href="http://volitve.gov.si/en/index.html">Election Results</a></li>
+<li><a href="http://www.vlada.si/si/o_vladi/prejsnje_vlade/">Cabinets</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="https://english.sta.si/">Sta</a></li>
+<li><a href="http://www.sloveniatimes.com">Slovenia Times</a></li>
+<li><a href="http://www.rferl.org">Radio Free Europe</a> — esp.&nbsp;online archive from 1996 onwards</li>
+</ul>
+<p>Todo later</p>
+<ul>
+<li>consistent coding of cabinet start dates for investiture vote of PM or cabinet (see Krašovec/Krpič 2019, 482–83)</li>
+<li>number of votes and total votes for Italian and Hungarian national community seats</li>
+</ul>
+</section>
+<section id="spain" class="level3">
+<h3 class="anchored" data-anchor-id="spain">Spain</h3>
+<p>Data sources online</p>
+<ul>
+<li><a href="https://www.boe.es/">Official Bulletin of the State</a></li>
+<li><a href="http://www.infoelectoral.mir.es/">Info Electoral – Ministerio del Interior</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="http://www.elpais.com/english/">El Pais</a></li>
+</ul>
+<p>Coding comments</p>
+<ul>
+<li>official results include blank votes into valid votes (‘Votos Válidos’) – ParlGov ‘votes_valid’ are based on ‘Votos a Candidaturas’</li>
+<li>regional parties which are affiliated with national parties such as the Catalan branch of the <a href="http://www.parlgov.org/explore/esp/party/902/">PSOE</a> are not coded separately as an individual party in elections</li>
+<li>(most) regional parties and green parties in ParlGov not coded as alliance members in EP elections</li>
+</ul>
+<p>Open questions</p>
+<ul>
+<li>more detailed information about types of support for minority cabinets</li>
+<li>information about parliamentary boycott of HB (esp.&nbsp;1989 election and Gonzalez cabinet)</li>
+</ul>
+<p>Todo later</p>
+<ul>
+<li>harmonize and define coding electoral alliances</li>
+</ul>
+</section>
+<section id="sweden" class="level3">
+<h3 class="anchored" data-anchor-id="sweden">Sweden</h3>
+<p>Information</p>
+<ul>
+<li>full male suffrage in 1909 and female suffrage in 1922</li>
+<li>PR (D’Hondt) in 1909, 230 seats
+<ul>
+<li>1952: Saint-Laguë; 1969: unicameral, 350 seats, upper tier, 4.0% threshold</li>
+</ul></li>
+<li>cabinet investiture
+<ul>
+<li>negative parliamentarism since 1. Jan.&nbsp;1975</li>
+<li>no absolute majority against cabinet</li>
+<li>see <a href="https://www.riksdagen.se/globalassets/07.-dokument--lagar/regeringsformen-eng-2021.pdf">Instrument of Government (1974: 152)</a> Chapter 12, Art. 3 (page 13)</li>
+</ul></li>
+</ul>
+<p>Data sources online</p>
+<ul>
+<li>Official election results
+<ul>
+<li><a href="http://www.scb.se/Pages/List____292050.aspx">Valstatistik 1871–1999</a></li>
+<li><a href="http://www.scb.se/Pages/PublishingCalendarStartPage____259921.aspx?PublishingType=Pub&amp;type=PUB&amp;amne=ME">Valstatistik 2002–</a></li>
+</ul></li>
+<li>Swedish Election Authority
+<ul>
+<li><a href="http://www.val.se/">election results</a></li>
+<li><a href="http://www.val.se/det_svenska_valsystemet/partier/lista_registrerade_partibeteckningar/index.html">registered parties</a></li>
+</ul></li>
+<li><a href="http://www.scb.se/Pages/List____283991.aspx">Statistisk årsbok för Sverige</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="http://sverigesradio.se/sida/gruppsida.aspx?programid=2054&amp;grupp=3582">Radio Sweden</a></li>
+<li><a href="http://www.swedishwire.com/politics/">Swedish Wire</a></li>
+<li><a href="http://www.thelocal.se/news/7/">The Local</a></li>
+</ul>
+<p>References</p>
+<ul>
+<li>Esaiasson, Peter. 1990. Svenska Valkampanjer 1866-1988. Stockholm: Allmänna förlaget.</li>
+</ul>
+<p>Open questions</p>
+<ul>
+<li>should the 1970 election be considered an ‘early’ election?</li>
+<li>parties supporting minority governments and type of support</li>
+<li>party change after elections of 1964 &amp; 1968
+<ul>
+<li>what was the exact date of change or the date of opening session of the parliamentary term?</li>
+</ul></li>
+</ul>
+</section>
+<section id="switzerland" class="level3">
+<h3 class="anchored" data-anchor-id="switzerland">Switzerland</h3>
+<p>Information</p>
+<ul>
+<li>federal semi-direct democracy under multi-party parliamentary directorial republic</li>
+<li>full male suffrage in 1848 and female suffrage in 1971</li>
+<li>two round majority-plurality SMD in 1900</li>
+<li>PR (Hagenbach-Bischoff) in 1919</li>
+</ul>
+<p>Data sources online</p>
+<ul>
+<li><a href="https://www.bfs.admin.ch/bfs/de/home.html">Statistical Office of Switzerland</a></li>
+<li><a href="http://www.parlament.ch/e/wahlen-abstimmungen/Pages/default.aspx">The Federal Assembly — The Swiss Parliament</a></li>
+<li><a href="https://www.parlament.ch/en/organe/groups">Parliamentary Groups</a></li>
+<li><a href="http://www.swissvotes.ch/">Referenda</a></li>
+<li><a href="http://www.hls-dhs-dss.ch/index.php">Historisches Lexikon der Schweiz</a> [German]</li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="http://www.swissinfo.ch/eng">Swiss Broadcasting Corporation (SBC)</a></li>
+</ul>
+<p>Coding comments</p>
+<ul>
+<li>number of votes based on adjusted votes (‘fiktive Stimmen’) calculated by Statistical Office of Switzerland</li>
+<li>cabinets are coded for each legislative term
+<ul>
+<li>no prime minister position is attached to a party – one year Bundespräsident is primus inter pares</li>
+<li>‘starting_date’ is the election of the Bundesrat</li>
+</ul></li>
+</ul>
+<p>Open questions</p>
+<ul>
+<li>more information and independent verification about <a href="http://dev.parlgov.org/data/756/party/38/">PSU</a> needed</li>
+</ul>
+<p>Todo later</p>
+<ul>
+<li>add French names to all parties</li>
+<li>add largest party no seats for elections before 1967 (source needed)</li>
+</ul>
+</section>
+<section id="turkey" class="level3">
+<h3 class="anchored" data-anchor-id="turkey">Turkey</h3>
+<p>Information</p>
+<ul>
+<li>presidential system since 2018</li>
+</ul>
+<p>Data sources online</p>
+<ul>
+<li><a href="http://www.ysk.gov.tr/en/past-elections/1852">Supreme Election Council</a></li>
+</ul>
+<p>News in English</p>
+<ul>
+<li><a href="http://www.hurriyetdailynews.com/">Hürriyet</a></li>
+</ul>
+<p>Todo later</p>
+<ul>
+<li>decision about future inclusion after change to a presidential system in 2018</li>
+</ul>
+</section>
+<section id="united-kingdom" class="level3">
+<h3 class="anchored" data-anchor-id="united-kingdom">United Kingdom</h3>
+<p>Information</p>
+<ul>
+<li>universal suffrage in 1918</li>
+</ul>
+<p>Coding comments</p>
+<ul>
+<li>no statistics about number of invalid votes existing until 1964 (see Thrasher/Rallings 2009)</li>
+</ul>
+<p>Data sources online</p>
+<ul>
+<li><a href="https://www.electoralcommission.org.uk/our-work/our-research/electoral-data">Electoral Commission</a></li>
+<li><a href="http://www.election.demon.co.uk/">United Kingdom Election Results</a>
+<ul>
+<li>includes a list of <a href="http://www.election.demon.co.uk/pollinks.html">references</a> on parties, elections and MPs</li>
+</ul></li>
+</ul>
+<p>References</p>
+<ul>
+<li>Barberis, Peter. 2005. Encyclopedia of British and Irish Political Organizations: Parties, Groups and Movements of the 20th Century. New York; London: Continuum.</li>
+<li>Butler, D., 2010. British Political Facts 10th ed., Palgrave Macmillan.
+<ul>
+<li>core reference on governments, ministers, parties and MPs</li>
+</ul></li>
+<li>Thrasher, M. &amp; Rallings, C., 2009. British Electoral Facts, Total Politics.
+<ul>
+<li>an updated version of F.W.S. Craig’s classical collection of election results in the UK</li>
+</ul></li>
+</ul>
+<p>Todo later</p>
+<ul>
+<li>2011 coding – to be checked and updated</li>
+<li>source to validate number of votes cast (‘votes_cast’) – data until 1959 needed</li>
+<li>‘votes_total’ needed for 2015 and some earlier elections</li>
+</ul>
+</section>
+</section>
+<section id="contributors" class="level2">
+<h2 class="anchored" data-anchor-id="contributors">Contributors</h2>
+<section id="project-leaders" class="level3">
+<h3 class="anchored" data-anchor-id="project-leaders">Project leaders</h3>
+<ul>
+<li>Holger Döring 2005–2024</li>
+<li>Philip Manow 2004–2024</li>
+</ul>
+</section>
+<section id="institutional-affiliation" class="level3">
+<h3 class="anchored" data-anchor-id="institutional-affiliation">Institutional affiliation</h3>
+<ul>
+<li>University of Bremen 2010–2024</li>
+<li>GESIS Leibniz Institute for the Social Sciences 2021–2023</li>
+<li>European University Institute (EUI) 2009–2010</li>
+<li>University of Heidelberg 2009–2010</li>
+<li>University of Konstanz 2007–2009</li>
+<li>Max Planck Institute for the Study of Societies (MPIfG) 2004–2007</li>
+</ul>
+</section>
+<section id="data-editors" class="level3">
+<h3 class="anchored" data-anchor-id="data-editors">Data editors</h3>
+<ul>
+<li>Pawel Szczerbak 2010–2011</li>
+<li>Timm Frerk 2011–2013</li>
+<li>Alina Grünwald 2012–2013</li>
+<li>Volker Lindhauer 2012–2012</li>
+<li>Patrick Statsch 2013</li>
+<li>Julian Limberg 2014–2015</li>
+<li>Lina Schwarz 2014–2017</li>
+<li>Aaron Thatje 2018</li>
+<li>Lukas Warode 2019–2021</li>
+<li>Maike Hesse 2021–2023</li>
+<li>Alexandra Quaas 2021–2023</li>
+</ul>
+</section>
+<section id="major-contributors" class="level3">
+<h3 class="anchored" data-anchor-id="major-contributors">Major contributors</h3>
+<ul>
+<li>Conor Little (University of Limerick) 2011–2018</li>
+<li>Constantin Huber (University of Bremen) 2021–2023</li>
+<li>Dominic Heinz (MPIfG and University of Bonn) 2006–2007</li>
+<li>Hendrik Zorn (MPIfG) 2004</li>
+<li>Jan Biesenbender (University of Konstanz) 2008–2010</li>
+<li>Jens Hoffmeister (underline webdesign Berlin) 2010</li>
+<li>Jonathan Bright (European University Institute) 2011–2013</li>
+<li>Lukas Warode (University of Bremen) 2021</li>
+<li>Mathias Steudtner (Mittweida) 2007–2008</li>
+<li>Valentin Schröder (University of Bremen) 2010–2019</li>
+</ul>
+</section>
+<section id="open-source-software" class="level3">
+<h3 class="anchored" data-anchor-id="open-source-software">Open source software</h3>
+<ul>
+<li>Python — programming language</li>
+<li>Django — web application framework</li>
+<li>Bootstrap — front–end framework for web development</li>
+<li>R and RSQLite, SQLite</li>
+<li>Font Awesome</li>
+</ul>
+</section>
+<section id="contributors-1" class="level3">
+<h3 class="anchored" data-anchor-id="contributors-1">Contributors</h3>
+<p>We would like to thank the following people for contributing facts, support, ideas, and encouragement.</p>
+<ul>
+<li>Aaron Thatje (University of Bremen) 2018</li>
+<li>Alexander Trechsel (European University Institute) 2009–2016</li>
+<li>Alexia Katsanidou (GESIS Cologne) 2011</li>
+<li>Aline Grünewald (University of Bremen) 2011</li>
+<li>Andrea Pedrazzani (University of Bologna) 2018</li>
+<li>Armin Schäfer (MPIfG) 2005–2007</li>
+<li>Ben Stanley (University of Social Sciences and Humanities, Warsaw) 2016</li>
+<li>Bjørn Høyland (University of Oslo) 2009</li>
+<li>Christian Breunig (MPIfG and University of Seattle) 2006–2008</li>
+<li>Christina Zuber (University of Konstanz) 2015–2024</li>
+<li>Christine Arnold (University of Maastricht) 2012</li>
+<li>Daniel Bochsler (University of Copenhagen) 2016</li>
+<li>David Willumsen (University of Innsbruck) 2019</li>
+<li>Diego Garzia (University of Siena) 2011</li>
+<li>Dimiter Toshkov (Leiden University) 2019</li>
+<li>Dominik Kunert (University of Konstanz) 2011</li>
+<li>Doru Frantescu (VoteWatch Europe) 2013</li>
+<li>Eva Onnudottir (University of Mannheim) 2014</li>
+<li>Fabio Franchino (University of Milan) 2008–2010</li>
+<li>Florian Beyer (University of Konstanz) 2008–2009</li>
+<li>François Briatte (Catholic University of Lille) 2019</li>
+<li>Frank Henze (Brandenburg Technical University of Cottbus) 2005–2011</li>
+<li>Georg Lutz (University of Lausanne) 2012</li>
+<li>Guinaudeau Isabelle (Sciences Po Bordeaux) 2021</li>
+<li>Guido Tiemann (IHS Vienna) 2006–2011</li>
+<li>Hanna Bäck (University of Mannheim) 2010–2016</li>
+<li>Indridi H. Indridason (UC Riverside) 2017</li>
+<li>Jan Rose (Berlin) 2005–2011</li>
+<li>Jan Schwalbach (University of Bremen) 2015</li>
+<li>Jef Smulders (KU Leuven) 2013–2016</li>
+<li>Johan Hellström (University of Umeå) 2009–2024</li>
+<li>Johannes Freudenreich (University of Potsdam) 2009–2011</li>
+<li>Johannes Kleibl (University of Essex) 2010</li>
+<li>Jonathan Polk (University of Gothenburg) 2014</li>
+<li>José M. Abad (El País) 2017</li>
+<li>Julia Sievers (University of Bremen) 2006–2024</li>
+<li>Julian Limberg (University of Bremen) 2013–2015</li>
+<li>Jürgen Lautwein (MPIfG) 2007</li>
+<li>Kevin Deegan-Krause (Wayne State University) 2014–2019</li>
+<li>Lars Brückner (University of Bremen) 2010</li>
+<li>Lea Kaftan (University of Cologne) 2014</li>
+<li>Lina Schwarz (University of Bremen) 2014–2017</li>
+<li>Luca Verzichelli (University of Siena) 2007–2016</li>
+<li>Lukas Warode (University of Bremen) 2018–2021</li>
+<li>Madeleine Schneider (Swiss Federal Statistical Office) 2012</li>
+<li>Marco Frisone (University of Bologna) 2012</li>
+<li>Marco Giuliani (University of Milano) 2019–2021</li>
+<li>Maria Thürk (University of Bremen) 2013–2015</li>
+<li>Mark Franklin (European University Institute) 2009–2010</li>
+<li>Mattan Sharkansky (University of Rochester) 2015</li>
+<li>Micha Bächle (University of Konstanz) 2009</li>
+<li>Mihail Chiru (Central European University) 2012–2013</li>
+<li>Mikko Mattila (University of Helsinki) 2009</li>
+<li>Monika Mühlböck (IHS Vienna) 2009–2010</li>
+<li>Moritz Muth (University of the Arts Bremen) 2013</li>
+<li>Nina Wiesehomeier (Swansea University) 2008–2024</li>
+<li>Ofer Kenig (The Israel Democracy Institute, Jerusalem) 2014, 2020</li>
+<li>Or Tuttnauer (University of Mannheim) 2019–2020</li>
+<li>Osnat Akirav (Western Galilee College) 2016–2019</li>
+<li>Patrick Dumont (University of Luxembourg) 2010–2012</li>
+<li>Patrick Statsch (University of Bremen) 2013</li>
+<li>Pawel Szczerbak (Heidelberg University) 2010–2011</li>
+<li>Peter Mair (European University Institute) 2009–2010</li>
+<li>Peter Meißner (University of Konstanz) 2015</li>
+<li>Peter Söderlund (Åbo Akademi) 2015</li>
+<li>Philipp Harfst (University of Greifswald) 2007-2013</li>
+<li>Philipp Köker (University College London) 2016</li>
+<li>Phillip Hocks (University of Bremen) 2015</li>
+<li>Phillip Rehm (WZB Berlin Social Science Center and Duke University) 2007</li>
+<li>Pola Lehmann (WZB Berlin Social Science Center) 2014–2019</li>
+<li>Quinton Mayne (Harvard University) 2009–2010, 2018</li>
+<li>Rick Well (Leiden University) 2022</li>
+<li>Ryan Bakker (University of Georgia) 2014</li>
+<li>Sarah Engler (University of Bern) 2015–2017</li>
+<li>Sebastian Eppner (University of Potsdam) 2009–2015</li>
+<li>Sebastian Hübers (MPIfG and University of Tübingen) 2006</li>
+<li>Sebastian Jäckle (University of Freiburg) 2011</li>
+<li>Sigita Trainauskiene (Government Strategic Analysis Center, Vilnius) 2020</li>
+<li>Simon Franzmann (University of Cologne) 2006–2012</li>
+<li>Sinziana Popa (MPIfG and Duke University) 2007</li>
+<li>Steffen Stell (University of Konstanz 2021)</li>
+<li>Steffen Ganghof (MPIfG and University of Potsdam) 2005–2012</li>
+<li>Svanur Kristjansson (University of Iceland) 2014</li>
+<li>Sven Regel (WZB Berlin Social Science Center) 2011–2023</li>
+<li>Thomas Mustillo (Purdue University) 2014–2024</li>
+<li>Timm Frerk (University of Bremen) 2011–2013</li>
+<li>Tom Fleming (University of Oxford) 2016</li>
+<li>Tom Louwerse (Leiden University) 2022</li>
+<li>Volker Lindhauer (University of Bremen) 2011</li>
+<li>Zsófia Papp (HAS Centre for Social Sciences, Budapest) 2014</li>
+</ul>
+</section>
+</section>
+<section id="changes" class="level2">
+<h2 class="anchored" data-anchor-id="changes">Changes</h2>
+<section id="version-2024" class="level3">
+<h3 class="anchored" data-anchor-id="version-2024">Version 2024</h3>
+<p>Stable version on 12 August 2024 with data updated until June 2023</p>
+<ul>
+<li>release manager: Holger Döring</li>
+<li>data update: Alexandra Quaas, Maike Hesse</li>
+</ul>
+<section id="new-information" class="level4">
+<h4 class="anchored" data-anchor-id="new-information">New information</h4>
+<ul>
+<li>new elections and cabinets from January 2022 to June 2023</li>
+</ul>
+</section>
+<section id="documentation" class="level4">
+<h4 class="anchored" data-anchor-id="documentation">Documentation</h4>
+<ul>
+<li>added pdf-version codebook (Markdown based)</li>
+<li>added data editors section to credits</li>
+<li>added tables to SQLite database release
+<ul>
+<li>‘info_data_source_country’</li>
+<li>‘cabinet_confidence_vote’, ‘info_page_content’ and ‘info_variable_json’ (experimental version)</li>
+</ul></li>
+<li>minor codebook revisions</li>
+</ul>
+</section>
+<section id="corrections-and-updates" class="level4">
+<h4 class="anchored" data-anchor-id="corrections-and-updates">Corrections and updates</h4>
+<ul>
+<li>added no-seat party: DEU 1919–1933, EST 2009-EP, GBR 1983, ITA 2004-EP, POL 2019, SVN 2019, ROU 1990. SVN 2000, SWE 2018, TUR 2015</li>
+<li>renamed cabinet names into ascii: AUT Dollfuss, FIN Kivimaki, FRA Debre, DEU Mueller, DEU Bruening, NOR Lovland</li>
+<li>corrected English spelling party names: AUT I-Nat, CYP SYM, DNK AE, IRL FG, ISR Noam, LVA LKPP, NZL CP, SVN SOPS</li>
+<li>AUT election: recoded Nat-WA into I-Nat</li>
+<li>BGR cabinet 2017: added none with PM</li>
+<li>BGR party: renamed party short R into V (party id 2640)</li>
+<li>CHE cabinet 1902: removed PM coding</li>
+<li>CHE election 2019: only one no-seat party</li>
+<li>CYP cabinet 1976: recoded none</li>
+<li>FIN election 2015: recoded one-seat into AS</li>
+<li>MLT election 2017: added PD</li>
+<li>NLD cabinet 1946: removed VVD</li>
+<li>ROU election EP 2019: corrected seats PLUS</li>
+</ul>
+</section>
+<section id="webpage" class="level4">
+<h4 class="anchored" data-anchor-id="webpage">Webpage</h4>
+<ul>
+<li>added Markdown version codebook</li>
+<li>prepare archiving of legacy Django implementation</li>
+<li>prepare minimal new Django implementation</li>
+</ul>
+</section>
+</section>
+<section id="version-2022" class="level3">
+<h3 class="anchored" data-anchor-id="version-2022">Version 2022</h3>
+<p>Stable version on 29 April 2022 with data updated until December 2021</p>
+<ul>
+<li>release manager: Holger Döring</li>
+<li>data update: Constantin Huber, Alexandra Quaas, Maike Hesse, Lukas Warode</li>
+</ul>
+<section id="new-information-1" class="level4">
+<h4 class="anchored" data-anchor-id="new-information-1">New information</h4>
+<ul>
+<li>new elections and cabinets from April 2020 to December 2021</li>
+<li>validated Central- and Eastern European cabinets with Bergman ea. (2019)</li>
+<li>validated West European cabinets with Bergman ea. (2021)</li>
+<li>see also <a href="http://www.parlgov.org/documentation/news/?type__short=recent">news</a></li>
+</ul>
+</section>
+<section id="corrections-and-updates-1" class="level4">
+<h4 class="anchored" data-anchor-id="corrections-and-updates-1">Corrections and updates</h4>
+<ul>
+<li>NLD cabinet 1946: removed VVD (party id 1409)</li>
+<li>AUS party: recoded CN-QLD into C</li>
+<li>CAN election 2019: recoded votes “none”</li>
+<li>CYP cabinet 2018: removed none</li>
+<li>EST cabinet 1995: recoded party composition</li>
+<li>EST election 1995: added parliament changes</li>
+<li>FRA cabinet 1997: added PRS, V, MC</li>
+<li>FRA cabinets 2016: recoded EELV into PE</li>
+<li>FRA party: recoded RCV into PRS</li>
+<li>ISR elections 2015–2020: added AY and DeTo as alliance members of YaToMe</li>
+<li>ITA party: recoded PdL results from CeD into FI-PdL for 2008 national and 2009 EP election</li>
+<li>JPN election 2012: added HRP</li>
+<li>LTU cabinet 2009: corrected cabinet name (Kubilius)</li>
+<li>LVA election 2018: added KP seats</li>
+<li>NLD election 2010: recoded no-seat into one-seat</li>
+<li>NLD election EP 1984: corrected “party_id” results CP and EuGro</li>
+<li>NLD election EP 1989: recoded CP into CD</li>
+<li>NOR election 1918: recoded one-seat into none</li>
+<li>NZL cabinet 2017: recoded Greens to cabinet support instead of cabinet member</li>
+<li>ROU cabinet 2019: removed (three month rule)</li>
+<li>ROU election EP 2019: recoded and linked USR and PLUS to USR-PLUS (electoral alliance)</li>
+<li>ROU party: recoded PLR into PLR|ALDE</li>
+<li>TUR election 2018: recoded SP into Nation Alliance alliance member</li>
+</ul>
+</section>
+<section id="webpage-1" class="level4">
+<h4 class="anchored" data-anchor-id="webpage-1">Webpage</h4>
+<ul>
+<li>use static page at parlgov.org</li>
+<li>use Docker to run ParlGov web page locally</li>
+<li>retire public version of legacy Django implementation</li>
+</ul>
+</section>
+</section>
+<section id="version-2020" class="level3">
+<h3 class="anchored" data-anchor-id="version-2020">Version 2020</h3>
+<p>Stable version on 8 December 2020 (Covid-19 delay) with data updated until March 2020</p>
+<ul>
+<li>release manager: Holger Döring</li>
+<li>data update: Lukas Warode</li>
+</ul>
+<section id="new-information-2" class="level4">
+<h4 class="anchored" data-anchor-id="new-information-2">New information</h4>
+<ul>
+<li>new elections and cabinets from April 2018 to March 2020</li>
+<li>AUS and DEU pre-1945 elections and cabinets added</li>
+<li>added EP elections and EU Commission 2019</li>
+<li>added SQLite database file into ParlGov Dataverse (includes experimental version)</li>
+<li>depreciated Twitter news tracker on 1 June 2020</li>
+</ul>
+</section>
+<section id="documentation-1" class="level4">
+<h4 class="anchored" data-anchor-id="documentation-1">Documentation</h4>
+<ul>
+<li><a href="http://www.parlgov.org/documentation/codebook-all/">unified codebook</a> (coding rules, country notes, changes, credits) for stable versions</li>
+<li><a href="https://github.com/hdigital/parlgov-snippets">ParlGov snippets</a> with usage (code) examples</li>
+<li>specified coding rules continuation caretaker cabinet</li>
+</ul>
+</section>
+<section id="corrections-and-updates-2" class="level4">
+<h4 class="anchored" data-anchor-id="corrections-and-updates-2">Corrections and updates</h4>
+<ul>
+<li>AUT cabinet 2016: corrected party composition</li>
+<li>AUT election EP 1996: corrected date</li>
+<li>BGR party: recoded ONS into DPS</li>
+<li>CHE elections 1975–1983: added V as alliance member of RB</li>
+<li>CYP cabinet 1977: corrected start date and added caretaker status</li>
+<li>CYP cabinet 2018: added Anastasiades IV</li>
+<li>DNK election 2001: added CD and corrected vote share of DF and FrP</li>
+<li>ESP cabinet 1994: added PM to Tarand</li>
+<li>ESP cabinets 2018–2020: removed PSC-PSOE</li>
+<li>ESP election 2011: removed regional party branches and recoded affected election results</li>
+<li>ESP election 2016: added Unidos Podemos to replace Podemos for alliance</li>
+<li>ESP elections 1982, 1996, 2000: added “no-seat” results</li>
+<li>ESP elections EP: clean-up and minor recoding of regional parties alliances</li>
+<li>FRA cabinets: added PM to Chautemps II (1933), Queuille II (1950), Valls II (2014)</li>
+<li>GBR election 1918: removed ColCon, recoded into Con, added Con-18, added parliament change</li>
+<li>GBR election 1945: recoded Nat into others</li>
+<li>GBR election EP 2004: corrected votes cast</li>
+<li>HRV election 2016: SPH alliance seats at members level</li>
+<li>HRV elections 2003–2016: added SDSS 3 seats to ethnic</li>
+<li>HRV party HPS: renamed Croatian People’s Party (Hrvatska pucka stranka, ID 2203) into Croatian Popular Party</li>
+<li>HRV party: removed SU, duplicate of HSU</li>
+<li>IRL cabinet 2016, 2017: added IA</li>
+<li>IRL election 1994: added parliament changes</li>
+<li>IRL elections: corrected number of seats and included seat of the chairman</li>
+<li>ISL election 2017: corrected date</li>
+<li>ISL party: recoded OL into Sfvm</li>
+<li>ISR cabinet 2016: removed YH as cabinet support and added it to cabinet</li>
+<li>ISR cabinets 2011 and 2012: removed MHH and corrected appointment dates</li>
+<li>ISR cabinets 2013 and 2014: added YB</li>
+<li>ISR cabinets: added support parties for all cabinets</li>
+<li>ISR election 2013: corrected parliament change (L, YB)</li>
+<li>ISR election 2013: Likud and YB seats for joint parliament group and split</li>
+<li>ISR parties: name short not based on “Ha” and “Le” prefix</li>
+<li>ITA election 2013: added 13 seats others</li>
+<li>ITA elections 2001–2013: recoded election results</li>
+<li>ITA party: recoded BN into PLI</li>
+<li>ITA party: recoded DINI-RI into RI</li>
+<li>ITA party: recoded LA into PRC</li>
+<li>ITA party: recoded PdA into MpA</li>
+<li>ITA party: recoded UDN into PLI</li>
+<li>JPN election 2012: recoded PLF into TPJ</li>
+<li>LTU cabinets: added new cabinet after presidential elections</li>
+<li>LTU election 1996: added vacant seat and parliament change</li>
+<li>LTU election 2000: added LDDP+LSDP merger</li>
+<li>LTU party: recoded KDT into LSDSP</li>
+<li>LTU party: recoded LLiS into LiCS</li>
+<li>LTU party: removed LDDP</li>
+<li>LUX parties: changed party names to Luxembourgish name only (French and German party names are coded as json)</li>
+<li>LUX party: recoded GAP into Greng</li>
+<li>LUX party: recoded GLA into GLEI</li>
+<li>MLT cabinet 1976: renamed to Mouskos</li>
+<li>MLT cabinet 2017: corrected party</li>
+<li>MLT cabinets: corrected index of some cabinet names</li>
+<li>MLT cabinets: removed president Mouskos 1960–1974</li>
+<li>NLD cabinet 2017: corrected PvdA party ID</li>
+<li>NLD cabinet 2018: added Rutte V government</li>
+<li>NLD cabinets 1933, 1935, 1939: replaced LU with LSP</li>
+<li>NLD election 1929: added MPSL</li>
+<li>NLD party PVV: recoded party family</li>
+<li>NZL cabinet 2017: corrected party composition</li>
+<li>PRT election 1980: corrected AD and PS votes</li>
+<li>PRT party: recoded FRS into PS</li>
+<li>ROU cabinet 1990: recoded into Roman II, corrected start date, added Roman I</li>
+<li>SVK cabinet 1919: added SOS, updated source</li>
+</ul>
+</section>
+<section id="webpage-2" class="level4">
+<h4 class="anchored" data-anchor-id="webpage-2">Webpage</h4>
+<ul>
+<li><a href="http://www.parlgov.org/documentation/codebook-all/">codebook unified</a> to aggregate documentation</li>
+<li><a href="http://www.parlgov.org/documentation/country">country notes</a> public</li>
+</ul>
+</section>
+<section id="database" class="level4">
+<h4 class="anchored" data-anchor-id="database">Database</h4>
+<ul>
+<li>“polarization_vote” and “polarization_seats” in “viewcalc_election_parameter”</li>
+<li>harmonized “short” name to all lowercase and ‘-’ (instead of ‘_’) in “info_id”</li>
+</ul>
+</section>
+</section>
+<section id="version-2018" class="level3">
+<h3 class="anchored" data-anchor-id="version-2018">Version 2018</h3>
+<p>Stable version 1 May 2018</p>
+<section id="data" class="level4">
+<h4 class="anchored" data-anchor-id="data">Data</h4>
+<section id="new-information-3" class="level5">
+<h5 class="anchored" data-anchor-id="new-information-3">New information</h5>
+<ul>
+<li>elections and cabinets until March 2018</li>
+<li>pre-1945 elections and cabinets</li>
+</ul>
+</section>
+<section id="corrections-and-updates-3" class="level5">
+<h5 class="anchored" data-anchor-id="corrections-and-updates-3">Corrections and updates</h5>
+<ul>
+<li><p>corrected election date: FIN 1979; IRL 1954, 2002; PRT 1979; SWE 1956, 1998</p></li>
+<li><p>specified coding rule cabinet members electoral alliance</p></li>
+<li><p>removed imputed “eu_anti_pro” party positions for countries not in CHES</p></li>
+<li><p>BEL party: recoded PD into CV</p></li>
+<li><p>BEL election 1939: corrected results</p></li>
+<li><p>BGR election 2013: added KzB alliance members</p></li>
+<li><p>CZE election 2010: corrected TOP09 seats</p></li>
+<li><p>ESP party: recoded EP into EP-V</p></li>
+<li><p>EST party: split EER into EER and EER-91</p></li>
+<li><p>FRA election 1928: added RI seats</p></li>
+<li><p>FRA election EP 2014: added CSP</p></li>
+<li><p>FRA party: recoded MoDem into UDF</p></li>
+<li><p>GBR cabinet: added Churchill war ministries</p></li>
+<li><p>GBR election 1923: corrected vote share all parties</p></li>
+<li><p>GBR party: recoded LD and Alliance into Lib</p></li>
+<li><p>GRC cabinet 2012: added PASOK and DIMAR (non-partisan ministers)</p></li>
+<li><p>HRV election 2011, 2015: corrected election results on alliance level</p></li>
+<li><p>HRV election 2015: corrected election results based on ejpr</p></li>
+<li><p>HRV party: deleted HDS and MS</p></li>
+<li><p>ITA party: deleted DL</p></li>
+<li><p>ITA party: PSUf recoded into PSI</p></li>
+<li><p>LTU election 2012: corrected LSDP and TT seats</p></li>
+<li><p>LUX election 1925: corrected IL vote share</p></li>
+<li><p>LVA election 1995: corrected KDS seats</p></li>
+<li><p>NLD party: renamed “ChristianUnion – Reformed Political Party” into “ChristianUnion”</p></li>
+<li><p>NZL election 1931: corrected RP vote share</p></li>
+<li><p>POL election 2015: recoded PR into Razem</p></li>
+<li><p>PRT election 1975: corrected ‘one seat’ seats</p></li>
+<li><p>SVK cabinet 2006: corrected party composition Dzurinda III</p></li>
+<li><p>EU added Gabriel to Juncker (2014)</p></li>
+</ul>
+</section>
+</section>
+<section id="database-1" class="level4">
+<h4 class="anchored" data-anchor-id="database-1">Database</h4>
+<ul>
+<li>fixed issue in calculated county-year weights – “viewcalc_country_year_share”</li>
+</ul>
+</section>
+</section>
+<section id="version-2015" class="level3">
+<h3 class="anchored" data-anchor-id="version-2015">Version 2015</h3>
+<p>Stable version 12 March 2016</p>
+<section id="data-1" class="level4">
+<h4 class="anchored" data-anchor-id="data-1">Data</h4>
+<section id="new-information-4" class="level5">
+<h5 class="anchored" data-anchor-id="new-information-4">New information</h5>
+<ul>
+<li>2015 elections and cabinets</li>
+<li><a href="https://dataverse.harvard.edu/dataverse/parlgov">ParlGov Dataverse</a></li>
+<li>pre-1945 election results – <em>development version</em></li>
+</ul>
+</section>
+<section id="corrections-and-updates-4" class="level5">
+<h5 class="anchored" data-anchor-id="corrections-and-updates-4">Corrections and updates</h5>
+<ul>
+<li><p>tables (csv and xlsx) in <em>stable version</em> include only information from 1945 to 2015</p></li>
+<li><p>database includes also pre-1945 information from <em>development version</em></p></li>
+<li><p>AUT party: removed ApE</p></li>
+<li><p>BGR election 2013: recoded NDSV into CSD</p></li>
+<li><p>BGR party: corrected several short party names</p></li>
+<li><p>CHE party: renamed FraP into FGr-ASF</p></li>
+<li><p>CYP party: removed A+D+E</p></li>
+<li><p>DNK election 2005: corrected seats GrFa</p></li>
+<li><p>EST elections 1992 and 1995: removed electoral alliances Left Alternative and Oigus</p></li>
+<li><p>FRA election: recoded election dates to last date of election</p></li>
+<li><p>HUN election 1994: added KP</p></li>
+<li><p>HUN party: recoded CP into KDNP</p></li>
+<li><p>ISL election 1987: added FM and Thod</p></li>
+<li><p>ISR cabinet 1996: Netanyahu I split into three cabinets</p></li>
+<li><p>ISR election 1996: separate seats for Likud-Gesher-Tzomet alliance</p></li>
+<li><p>ISR election 2006: added HY</p></li>
+<li><p>ISR party: recoded Gahal into Likud</p></li>
+<li><p>ITA party: recoded SI and PSI-07 into P|SDI</p></li>
+<li><p>JPN party: recoded PLP into PLFP</p></li>
+<li><p>LTU election 1992: added electoral alliance For a United Lithuania</p></li>
+<li><p>LVA election 1995, 1998: added electoral alliance KDT/LSDA</p></li>
+<li><p>LVA election 1995: added new party LZ, added electoral alliance LSP+L</p></li>
+<li><p>LVA election 1998: removed LZS+KDS, alliance of LZP, KDS and Labor Party added</p></li>
+<li><p>LVA election 2006: recoded Motherland into SDLP</p></li>
+<li><p>LVA president 2007: added Valdis Zatlers</p></li>
+<li><p>NLD cabinet 1977: recoded KVP and ARP into CDA</p></li>
+<li><p>NOR election 2009: corrected date</p></li>
+<li><p>POL election 1991, 1993: recoded WAK and O into ZChN, removed WAK and O</p></li>
+<li><p>POL election 1997: UPRz recoded into UPR, removed UPRz, added PC, PCD, PL to AWS</p></li>
+<li><p>POL party: recoded PJKM into UPR|KNP</p></li>
+<li><p>ROU election 1990: removed electoral alliance AUL</p></li>
+<li><p>SVK party: removed SD</p></li>
+<li><p>SVN election 1990: SOPS added</p></li>
+<li><p>SVN party: DZL and ZEO added</p></li>
+</ul>
+</section>
+</section>
+<section id="webpage-3" class="level4">
+<h4 class="anchored" data-anchor-id="webpage-3">Webpage</h4>
+<ul>
+<li>relaunch with new <a href="http://getbootstrap.com/">Bootstrap 3</a> based layout (Dec 2014)</li>
+</ul>
+</section>
+<section id="database-2" class="level4">
+<h4 class="anchored" data-anchor-id="database-2">Database</h4>
+<ul>
+<li>fixed issue in data dump – 2014 stable version excluded ISR and TUR election and cabinet data</li>
+<li>Excel spreadsheet export of main tables</li>
+</ul>
+</section>
+</section>
+<section id="version-1412" class="level3">
+<h3 class="anchored" data-anchor-id="version-1412">Version 14/12</h3>
+<p>Stable version 29 December 2014</p>
+<section id="data-2" class="level4">
+<h4 class="anchored" data-anchor-id="data-2">Data</h4>
+<section id="new-information-5" class="level5">
+<h5 class="anchored" data-anchor-id="new-information-5">New information</h5>
+<ul>
+<li><p>country added: TUR, ISR</p></li>
+<li><p>added presidents</p></li>
+<li><p>updated from seats to votes level data: HUN, CHE, EST (completing votes level for all countries)</p></li>
+<li><p>elections added: EP elections 2014, HUN 2014, BEL 2014, SVN 2014, SWE 2014, NZL 2014, LVA 2014, BGR 2014, JPN 2014</p></li>
+<li><p>cabinets added: LVA Straujuma I, CZE Sobotka, DNK Thorning-Schmidt II, ITA Renzi, ROU Ponta III, CYP Anastasiades II, EST Roivas, FIN Katainen II, FRA Valls, HUN Orban III, FIN Stubb, FRA Valls II, BGR Bliznashki, BEL Di Rupo II, SVN Cerar, FIN Stubb II, POL Kopacz, BEL Michel, SWE Loefven, NZL Key III, LVA Straujuma II, BGR Borisov II, ROU Ponta IV, ISR Netanyahu VI, JPN Abe IV</p></li>
+<li><p>added EU Commission 2014</p></li>
+</ul>
+</section>
+<section id="corrections-and-updates-5" class="level5">
+<h5 class="anchored" data-anchor-id="corrections-and-updates-5">Corrections and updates</h5>
+<ul>
+<li><p>removed countries not fully covered: ALB, GDR, LIE, NIR, SCO, WAL; CHL, KOR, MEX, USA, EU</p></li>
+<li><p>PRT vote shares updated to calculated values (CNE source reports share based on total votes)</p></li>
+<li><p>FRA EP elections 1979 to 2009 revised and updated</p></li>
+<li><p>EST electoral alliances revised</p></li>
+<li><p>AUS election 1945: recoded election date</p></li>
+<li><p>AUS party: recoded VdU into FPO</p></li>
+<li><p>AUT party: recoded ALP (1910-14) into CLP</p></li>
+<li><p>AUT party: recoded ALP (1922) into LP</p></li>
+<li><p>AUT party: recoded NCL-NSW into LLP</p></li>
+<li><p>BEL party: recoded FDF+RW into FDF</p></li>
+<li><p>BEL party: recoded PRL/FDF into PRL</p></li>
+<li><p>BGR party: recoded NAPRED into ZNS</p></li>
+<li><p>BGR party: recoded PDS into PBSD</p></li>
+<li><p>CHE party: recoded FDP into FDP-PRD</p></li>
+<li><p>CYP cabinet: Clerides III, IV recoded etc into LP</p></li>
+<li><p>CZE party: recoded LEV21 into CSS</p></li>
+<li><p>CZE party: recoded SNK into SNK-ED</p></li>
+<li><p>CZE party: recoded ULD into US</p></li>
+<li><p>DEU election: added largest party no seat (first loser) with less than 1.0% vote share</p></li>
+<li><p>DEU party: recoded Gruene into B90/Gru</p></li>
+<li><p>DEU party: recoded Linke into Li/PDS</p></li>
+<li><p>ESP party: added CV with election results and alliance membership</p></li>
+<li><p>EST party: recoded EDP into ESE</p></li>
+<li><p>EST party: recoded EME into ERa</p></li>
+<li><p>EST party: removed ESDTP, RKI+SP</p></li>
+<li><p>FIN election 1927 to 1939: added ‘no seat’ party results</p></li>
+<li><p>FIN election 1927-1936: added ‘electorate’, ‘total_votes’, ‘valid_votes’</p></li>
+<li><p>FIN party: added PMP and updated election results</p></li>
+<li><p>FIN party: recoded SKP and VAS into DL/VAS</p></li>
+<li><p>GRC party: unified ‘party_name_short’ to Greek party names</p></li>
+<li><p>HUN election EP 2009: recoded seats Fidesz and KDNP</p></li>
+<li><p>HUN party: recoded MSZMP into MMP</p></li>
+<li><p>IRL election EP: recoded ‘none’ into MEPs winning seats twice</p></li>
+<li><p>ISL election 1963: corrected ‘electorate’ and ‘votes_total’ (swapped)</p></li>
+<li><p>ISL party: Ab - updated information about alliance members and seats distribution</p></li>
+<li><p>ITA cabinet 1970: split PSU into PRI and PSU</p></li>
+<li><p>ITA party: recoded FDP into PCI</p></li>
+<li><p>ITA party: recoded FSN into PD</p></li>
+<li><p>ITA party: recoded Lib/Rep into PRI</p></li>
+<li><p>ITA party: recoded PSI/AD into PSI</p></li>
+<li><p>JPN party: recoded RP into DP</p></li>
+<li><p>JPN party: recoded TPJ into PLF/TPJ</p></li>
+<li><p>JPN party: removed SPJ, PLP</p></li>
+<li><p>LTU election 1992: corrected election date</p></li>
+<li><p>LTU party: recoded L+L+L into LKDP</p></li>
+<li><p>LTU party: recoded SK into TS-LK</p></li>
+<li><p>LTU party: recoded TS-LKD into TS-LK</p></li>
+<li><p>NLD cabinet: recoded Balkenende I-VI (split Balkenende I)</p></li>
+<li><p>NLD party: recoded DMP into NMP</p></li>
+<li><p>NZL cabinet: recoded start date Key II</p></li>
+<li><p>POL party: recoded PPPP into PPG and removed MP</p></li>
+<li><p>POL party: recoded RuPa into ROP</p></li>
+<li><p>POL party: recoded UD into UW-PD</p></li>
+<li><p>ROU party: recoded ARD into PL-D</p></li>
+<li><p>ROU party: recoded FDSN into PSD</p></li>
+<li><p>ROU party: removed ADA, PSD/PC, USL</p></li>
+<li><p>SVK election EP 2009: corrected ‘electorate’</p></li>
+<li><p>SVK party: split SDL into SDL and SDL-05</p></li>
+<li><p>SVN election 2000: corrected ‘electorate’</p></li>
+<li><p>SVN party: recoded NDS into SDZ</p></li>
+<li><p>SVN party: recoded SKD into NSI</p></li>
+</ul>
+</section>
+</section>
+<section id="webpage-4" class="level4">
+<h4 class="anchored" data-anchor-id="webpage-4">Webpage</h4>
+<ul>
+<li><em>maintenance</em> dev.parlgov.org</li>
+</ul>
+</section>
+<section id="database-3" class="level4">
+<h4 class="anchored" data-anchor-id="database-3">Database</h4>
+<ul>
+<li>added table ‘politician_president’</li>
+<li>added view ‘view_variable’ for documentation of main tables</li>
+<li>table ‘viewcalc_election_parameter’ – added variable ‘turnout’</li>
+<li>removed table ‘election_ep’</li>
+</ul>
+</section>
+</section>
+<section id="version-1312" class="level3">
+<h3 class="anchored" data-anchor-id="version-1312">Version 13/12</h3>
+<section id="data-3" class="level4">
+<h4 class="anchored" data-anchor-id="data-3">Data</h4>
+<section id="new-information-6" class="level5">
+<h5 class="anchored" data-anchor-id="new-information-6">New information</h5>
+<ul>
+<li><p>country added: HRV (since 2000)</p></li>
+<li><p>elections added: NLD 2012, LTU 2012, ROU 2012, JPN 2012, ITA 2013, MLT 2013, NOR 2013, DEU 2013, AUT 2013, AUS 2013, LUX 2013, CZE 2013</p></li>
+<li><p>cabinets added: NLD Rutte III, ROU Ponta II, JPN Abe III, MLT Muscat, ITA Letta I/II, GRC Samaras II, CZE Rusnok, CYP Anastasiades, NOR Solberg, AUS Abbott, LUX Bettel, AUT Faymann II, DEU Merkel III</p></li>
+<li><p>updated from seats to votes level data: ISL, MLT, LUX, BGR, CAN, ROU, IRL, CZE, ESP, GRC, LTU, SVN, SVK, FRA, NLD and all EP elections</p></li>
+</ul>
+</section>
+<section id="corrections-and-updates-6" class="level5">
+<h5 class="anchored" data-anchor-id="corrections-and-updates-6">Corrections and updates</h5>
+<ul>
+<li><p>compact version of stable release only</p></li>
+<li><p>recoding party families</p>
+<ul>
+<li>all parties are classified into main categories first</li>
+<li>additional party families in table ‘party_family’ only</li>
+<li>imputation of missing party positions by party family</li>
+</ul></li>
+<li><p>Chapel Hill Expert Survey (CHES) party ids updated for 2010 survey</p></li>
+<li><p>Commissioners: updated variable ‘elected’</p></li>
+<li><p>fixed issue in calculation of ‘viewcalc_parliament_composition’</p></li>
+<li><p>Changed all party names to include only ascii characters for respective variables</p></li>
+<li><p>BGR cabinet: updated all cabinet sources and descriptions</p></li>
+<li><p>DEU: added CDU/CSU party group to parliament changes and cabinets</p></li>
+<li><p>ITA elections 1994 to 2008:</p>
+<ul>
+<li>recoded major alliances into Centre Left and Centre Right</li>
+<li>recoded smaller parties (alliances) only recorded as alliances</li>
+<li>removed parties only recorded as alliance members (no seats, no votes)</li>
+<li>no nesting of alliances in alliances for election results (data_json entry now)</li>
+</ul></li>
+<li><p>AUT election: fixed typos in several election descriptions</p></li>
+<li><p>AUT party: recoded K/L into KPO</p></li>
+<li><p>AUT party: recoded WdU into VdU</p></li>
+<li><p>BEL party: recoded CD&amp;V into CVP</p></li>
+<li><p>BGR cabinet 1995: Videnov recoded BSP, BZNS, PKE into SDS</p></li>
+<li><p>BGR election 2009: updated source</p></li>
+<li><p>CAN party: recoded RPC into CA</p></li>
+<li><p>CZE cabinet 1993: Klaus II added KDS</p></li>
+<li><p>CZE cabinet 1998: Tosovsky recoded ODS into US and PM party into ‘none’</p></li>
+<li><p>EST party: recoded MKE into K-EUR</p></li>
+<li><p>FRA cabinet 1988: Rocard I+II added MRG</p></li>
+<li><p>FRA cabinet 2012: recoded V into PRG</p></li>
+<li><p>FRA election EP 2009: updated turnout data</p></li>
+<li><p>GBR election EP 1979 to 2004: updated turnout data</p></li>
+<li><p>GBR election EP 1999: added turnout data and SF</p></li>
+<li><p>GRC election EP 1981: updated results</p></li>
+<li><p>ISL election 1942, 1959 and 1979: recoded date of election to last election date</p></li>
+<li><p>ISL election 1943 to 1963: added votes</p></li>
+<li><p>ISL election 1943 to 1991: updated source</p></li>
+<li><p>ITA cabinet 1994: Berlusconi I added UdCe</p></li>
+<li><p>ITA party: recoded CI into PdCI</p></li>
+<li><p>ITA party: recoded LAD into R</p></li>
+<li><p>JPN party: removed ‘votes’ and ‘vote_share’ for ‘others’</p></li>
+<li><p>LTU cabinet 2006: Kirkilas recoded ‘start_date’</p></li>
+<li><p>LTU party: recoded VP/NDP into LVLS</p></li>
+<li><p>LVA party: recoded DT and LSA into LSDSP</p></li>
+<li><p>MLT party: recoded DA into AD</p></li>
+<li><p>NLD party: recoded RKSP into RKP</p></li>
+<li><p>NOR party: recoded R into RV</p></li>
+<li><p>NZL election 1978: updated ‘electorate’</p></li>
+<li><p>POL election 1993: recoded S into SRP</p></li>
+<li><p>PRT cabinet 1975: added Pinheiro de Azevedo cabinet</p></li>
+<li><p>SVK party: recoded ESWS into SMK-MKP</p></li>
+<li><p>SVK party: recoded SDKU into SDKU-DS</p></li>
+</ul>
+</section>
+</section>
+<section id="webpage-5" class="level4">
+<h4 class="anchored" data-anchor-id="webpage-5">Webpage</h4>
+<ul>
+<li><em>maintenance and polishing</em> dev.parlgov.org</li>
+<li>added favicons</li>
+</ul>
+</section>
+<section id="database-4" class="level4">
+<h4 class="anchored" data-anchor-id="database-4">Database</h4>
+<ul>
+<li><em>none</em></li>
+</ul>
+</section>
+</section>
+<section id="version-1210" class="level3">
+<h3 class="anchored" data-anchor-id="version-1210">Version 12/10</h3>
+<p>Stable version 15 October 2012</p>
+<section id="data-4" class="level4">
+<h4 class="anchored" data-anchor-id="data-4">Data</h4>
+<section id="new-information-7" class="level5">
+<h5 class="anchored" data-anchor-id="new-information-7">New information</h5>
+<ul>
+<li><p>elections added: DNK 2011, LVA 2011, POL 2011, ESP 2011, NZL 2011, CHE 2011, SVN 2011, SVK 2012, FRA 2012</p></li>
+<li><p>cabinets added: CYP Christofias IV, JPN Noda, DNK Thorning-Schmidt, LVA Dombrovskis IV, SVK Radicova II, ITA Monti, GRC Papademos, POL Tusk II, NZL Key II, ESP Rajoy, CHE Bundesrat 2011, BEL Di Rupo, SVN Jansa II, ROU Ungureanu, SVK Fico II, NLD Rutte II, CZE Necas II, ROU Ponta, SVK Pahor, FRA Ayrault I+II</p></li>
+<li><p>updated from seats to votes level data: AUT, NZL</p></li>
+<li><p>AUS: elections and cabinets 1901 to 1945</p></li>
+<li><p>CHE: elections and cabinets 1919 to 1943</p></li>
+<li><p>seats data in ‘view_cabinet’ take into account changes in parliament composition (if data available)</p></li>
+<li><p>added application to calculate political composition of the European Union</p></li>
+</ul>
+</section>
+<section id="corrections-and-updates-7" class="level5">
+<h5 class="anchored" data-anchor-id="corrections-and-updates-7">Corrections and updates</h5>
+<ul>
+<li><p>party clean up: removed minor parties without election results or two external data points</p></li>
+<li><p>party positions: fixed error in calculating party positions based on Benoit/Laver (2006)</p></li>
+<li><p>threshold including election results: removed election results for parties with less than 1.0% vote share (no seats)</p></li>
+<li><p>CHE election 1947 to 2007: updated source</p></li>
+<li><p>AUS election 2010: added results CLP</p></li>
+<li><p>AUT cabinet 1964 and 1997: Klaus I and Klima cabinet split into two cabinets – three month constrain</p></li>
+<li><p>AUT cabinet 2011: Schuessel IV updated ‘parliament_change’ to include BZÖ seats</p></li>
+<li><p>AUT election 1953: coded VdU and ApE as alliance members of WdU</p></li>
+<li><p>AUT party: split VdU/FPO into VdU and FPO</p></li>
+<li><p>BEL cabinet 2008 to 2001: recoded CD&amp;V/N-VA into CD&amp;V for Rompuy, Leterme II, Leterme II</p></li>
+<li><p>BEL cabinet: added Van and Vanden to names of respective PMs</p></li>
+<li><p>BEL cabinet: removed roman number from cabinet names for PMs with single term</p></li>
+<li><p>BEL cabinet: renamed Eyskens into Eyskens G</p></li>
+<li><p>BGR cabinet 1995: Videnov added coalition partners BZNS and PKE</p></li>
+<li><p>CAN election 1979: added SCP and corrected seats NDP</p></li>
+<li><p>CAN election 2008 and 2011: added official election results</p></li>
+<li><p>CAN election: updated source</p></li>
+<li><p>CHE cabinet 2008: added BDP</p></li>
+<li><p>CHE party: merged PSU into PSA</p></li>
+<li><p>CYP cabinet 2008: Christofias I split into two cabinets due to EDEK withdrawal</p></li>
+<li><p>DEU cabinet: ‘description’ added results confidence votes</p></li>
+<li><p>DEU party: added ‘uh’ to cover changes in parliament composition due to resignation of MPs and surplus seats</p></li>
+<li><p>DNK election 1953: April – corrected G/F seats</p></li>
+<li><p>DNK election 2001: recoded Mp into FrP</p></li>
+<li><p>DNK election EP 1979: corrected seats KF and seats_total</p></li>
+<li><p>DNK election EP 1984: corrected seats Sf and seats_total</p></li>
+<li><p>DNK election EP 1979 to 1989: updated source added parties with more than 1.0% vote share</p></li>
+<li><p>ESP election EP 1987: updated results</p></li>
+<li><p>FIN cabinet 1962: Karjalainen I added SK</p></li>
+<li><p>FIN cabinet 1971: one PM party in Karjalainen III only</p></li>
+<li><p>FIN election 1962: corrected vote share VI</p></li>
+<li><p>FRA election 2002: recoded ER/PRG into Droite and GE into V, added FN</p></li>
+<li><p>FRA election EP 1997: recoded ER/PRG into PRG</p></li>
+<li><p>GBR cabinet: updated source</p></li>
+<li><p>GBR election 2010: added Alliance (1 seat)</p></li>
+<li><p>GBR election EP 2009: removed UCU-NF (party_id 1243) and coded alliance with Uup</p></li>
+<li><p>GBR election EP 2009: UCU-NF added UUP and CNI alliance members</p></li>
+<li><p>GRC election 2007 and 2009: updated source</p></li>
+<li><p>ISL cabinet 1942: added Thordarson</p></li>
+<li><p>ISL election 1942: added results</p></li>
+<li><p>ITA cabinet 1996: split Dini into Dini I and Dini II – three month constrain</p></li>
+<li><p>ITA cabinet 1999 and 2000: D’Alema I and Amato II split DINI into RI and SDI</p></li>
+<li><p>ITA cabinet: recoded non-partisan PMs from ‘none’ into ‘PC’</p></li>
+<li><p>ITA election: corrected and updated some results</p></li>
+<li><p>JPN cabinet 1947: added NCoP</p></li>
+<li><p>JPN cabinet 1993: added DRP</p></li>
+<li><p>JPN cabinet 2003: removed NCP</p></li>
+<li><p>LTU cabinet 2010: split Kubilius II into Kubilius II and Kubilius III – party change</p></li>
+<li><p>LTU election 1996: corrected and updated results</p></li>
+<li><p>LUX election 1948 and 1951: updated partial election results</p></li>
+<li><p>LUX election EP 1979 to 2004: updated results</p></li>
+<li><p>LVA election 2010: corrected vote share</p></li>
+<li><p>NLD election EP 1994: corrected GroenLinks vote share</p></li>
+<li><p>NLD election EP 1994: recoded SGP into SGP/GPV/RP, corrected seats added alliance members</p></li>
+<li><p>NLD election EP 1999: SGP/GPV/RP added alliance members</p></li>
+<li><p>NLD election EP 2009: corrected GroenLinks and ChristenUnie-SGP votes</p></li>
+<li><p>NOR election 1973 to 2009: extended to 1.0% coding threshold</p></li>
+<li><p>NOR election 1973: minor corrections of vote share and updating data source</p></li>
+<li><p>NOR election 1977: minor corrections and additions</p></li>
+<li><p>POL election 1991: removed PPG and MP and added seats to PPPP</p></li>
+<li><p>ROU cabinet: removed Dejeu 1998, Athanasiu 1999, Bejinariu 2004 – three month constrain</p></li>
+<li><p>ROU cabinet 1996 to 1999: Ciorbea, Vasile, Isarescu cabinet parties recoded USD into PD and PSDR, CDR into PNT-CD and PNL</p></li>
+<li><p>ROU cabinet 2000: split Nastase into Nastase I and Nastase II – party change</p></li>
+<li><p>ROU cabinet 2009: split Boc II into Boc II and Boc III – party change</p></li>
+<li><p>ROU election 1992: split CDR seats into alliance members</p></li>
+<li><p>ROU election 2008: corrected ADA alliance members; corrected etnice; updated source</p></li>
+<li><p>SVK election EP 2009: corrected SDKU-DS vote share</p></li>
+<li><p>SVN cabinet 1993: Drnovsek II recoded DS into SDS</p></li>
+<li><p>SVN election 2008: updated source, added votes, turnout data and LIPA, LPR, LZCPV and KDS.</p></li>
+<li><p>SWE election 1998 and 2002: updated source</p></li>
+<li><p>SWE election EP 1995: updated source, corrected ‘electorate’</p></li>
+<li><p>SWE election EP 2004: updated source</p></li>
+</ul>
+</section>
+</section>
+<section id="webpage-6" class="level4">
+<h4 class="anchored" data-anchor-id="webpage-6">Webpage</h4>
+<ul>
+<li>party – added information about the calculation of party positions</li>
+<li>party – put information about parties (and their names) in external data sets to bottom of page</li>
+<li>party – removed information about party seats from index page of all parties per country</li>
+<li>election, election index – using new names for effective number of parties</li>
+<li>election, election index – disproportionality and advantage ratio with two digits</li>
+<li>election index – party with absolute majority of seats underlined</li>
+<li>cabinet index – show only one election date</li>
+<li>home section – show ‘Quick links’ first and add ‘Data section’ with examples</li>
+<li>documentation – removed key list from list of data sources (kept in experimental version)</li>
+<li>download section – added direct links to csv files of party, election and cabinet table</li>
+</ul>
+</section>
+<section id="database-5" class="level4">
+<h4 class="anchored" data-anchor-id="database-5">Database</h4>
+<ul>
+<li>new table – ‘parliament_composition’, ‘viewcalc_parliament_composition’, , ‘viewcalc_country_year_share’</li>
+<li>table ‘cabinet’ and ‘election’ – fixed bug in determining non-existent previous ids</li>
+<li>table ‘cabinet’ – added columns ‘appointment_date’, ‘resignation_date’ (experimental version)</li>
+<li>table ‘cabinet_party’ – added column ‘description’ and moved (most) ‘comment’ entries into it</li>
+<li>table ‘election’ – added columns ‘dissolution_date’, ‘wikipedia’ (experimental version)</li>
+<li>table ‘election_result’ – added column ‘description’ and moved (most) ‘comment’ entries into it</li>
+<li>table ‘party’ – added column ‘dissolution_date’ (experimental version)</li>
+<li>table ‘viewcalc_election_parameter’ – renamed ‘enep’ into ‘enp_votes’ and ‘enlp’ into ‘enp_seats’</li>
+<li>table ‘viewcalc_election_parameter’ – removed results for party family ‘none’ from calculation</li>
+<li>table ‘viewcalc_party_position’ – renamed ‘eu_pro_contra’ into ‘eu_anti_pro’</li>
+<li>table ‘viewcalc_party_position’ – don’t overwrite missing ‘left_right’ with ‘state_market’</li>
+<li>table ‘view_party’ – renamed ‘eu_pro_contra’ into ‘eu_anti_pro’</li>
+<li>table ‘view_cabinet’, ‘view_election’, ‘view_party’ – added ‘country_name’</li>
+<li>table ‘view_cabinet’ – ‘seats’ now based on ‘viewcalc_parliament_composition’ instead of ‘election_result’</li>
+</ul>
+</section>
+</section>
+<section id="version-1107" class="level3">
+<h3 class="anchored" data-anchor-id="version-1107">Version 11/07</h3>
+<p>Stable version 26 July 2011</p>
+<section id="data-5" class="level4">
+<h4 class="anchored" data-anchor-id="data-5">Data</h4>
+<section id="new-information-8" class="level5">
+<h5 class="anchored" data-anchor-id="new-information-8">New information</h5>
+<ul>
+<li><p>elections 2011 added: CAN, CYP, EST, FIN, IRL, PRT</p></li>
+<li><p>cabinets added: CAN Harper III, CYP Christofias II, EST Ansip IV, FIN Katainen, FRA Fillon III, IRL Kenny, PRT Coelho, SVN Pahor II</p></li>
+<li><p>added NIR – parties only</p></li>
+<li><p>updated from seats to votes level data: AUT, CYP, POL</p></li>
+<li><p>JPN: added elections and cabinets from 1945 to 1958</p></li>
+</ul>
+</section>
+<section id="corrections-and-updates-8" class="level5">
+<h5 class="anchored" data-anchor-id="corrections-and-updates-8">Corrections and updates</h5>
+<ul>
+<li><p>recoded nationalist, fascist and right-wing populist party families into ‘right wing’ and added former classifications as additional party families to table ‘party family’</p></li>
+<li><p>removed some entries used to define full party names from table party_change and added the information to json field in party table (eg. DEU: CDU, CSU; SWE: SAP)</p></li>
+<li><p>replaced missing ‘left_right’ party positions with ‘state_market’ values if available (esp.&nbsp;relevant for Benoit/Laver 2006 data)</p></li>
+<li><p>corrected documentation of variable ‘date’ in ‘election’ table</p></li>
+<li><p>CYP: removed elections and cabinets prior to 1976 (Polity IV score)</p>
+<ul>
+<li>added Kyprianou III, Kyprianou V, Vassiliou II, Klerides II, Klerides IV, Papadopoulos II</li>
+</ul></li>
+<li><p>AUT cabinet 1945: Figl I split into two cabinets</p></li>
+<li><p>AUT cabinet 2002: Schuessel I split into two cabinets – three month constrain</p></li>
+<li><p>AUT cabinet 2003: Schuessel II split into two cabinets taking into account FPÖ split (FPÖ, BZÖ)</p></li>
+<li><p>AUT election 1949 to 1962: coded KPO as Communist alliance</p></li>
+<li><p>AUT election 1999 and 2002: corrected seats total</p></li>
+<li><p>AUT election 1995: added turnout data, votes and Nein party, changed vote share</p></li>
+<li><p>AUT election 2008: corrected vote share</p></li>
+<li><p>AUT election EP 1996: corrected vote share</p></li>
+<li><p>AUT election EP 1999: corrected valid votes</p></li>
+<li><p>BEL cabinet 1991: recoded Martens IX starting date – three month constrain</p></li>
+<li><p>BEL cabinet 2007: Verhofstadt II split into two cabinets – three month constrain</p></li>
+<li><p>BEL cabinet 2010: Leterme III set start of cabinet to date of election (2010-06-13) – three month constrain</p></li>
+<li><p>BEL party: KPB-PCB split in 1989 coded (KP and PC); reassigned Ray party expert identifier to PC</p></li>
+<li><p>BGR election 1991: added parties</p></li>
+<li><p>BIH party: EU Profiler removed all links to Croatian parties – ticket:72</p></li>
+<li><p>BIH party: Benoit/Laver removed Croatian HDZ link</p></li>
+<li><p>CHE cabinet 2008: added Bundesrat 2008 – ticket:60</p></li>
+<li><p>CHE election 1983: added ‘others’ to election, updated seat composition</p></li>
+<li><p>CHE party: recoded LdU-AdI (party_id 1646) into LdU-ADI (party_id 1264)</p></li>
+<li><p>CYP cabinet 2008: recoded ADK into EDEK</p></li>
+<li><p>CYP election 2006: corrected KISOS and updated (votes) results</p></li>
+<li><p>CYP election EP 2004: added votes and EDEK result</p></li>
+<li><p>CYP party: added ‘EDEK’ to party name of Movement for Social Democracy and updated short party name</p></li>
+<li><p>CZE cabinet 2006: recoded start date of Topolanek I</p></li>
+<li><p>CZE cabinet 2009: updated start date of Fisher cabinet to PM appointment</p></li>
+<li><p>CZE election 2002: recoded date of election to last election date</p></li>
+<li><p>DEU cabinet 1960: Adenauer V split into two cabinets taking into account DP split</p></li>
+<li><p>DEU election 1949: added SSW</p></li>
+<li><p>DEU election 1953 to 2005: corrected valid votes – ticket:67</p></li>
+<li><p>DEU election 1961: recoded GB/BHE into an electoral alliance (GDP) between GB/BHE and DP</p></li>
+<li><p>DEU election 2009: corrected electorate, total votes, valid votes</p></li>
+<li><p>DEU election EP 1979 to 2004: updated from seats to votes level data</p></li>
+<li><p>DEU election: electoral alliance added for CDU/CSU – election results still coded at the the CDU and CSU level</p></li>
+<li><p>DEU party: updated predecessor/successor entries Linke and added 2005 electoral alliance</p></li>
+<li><p>DNK election 1945 to 1950: updated sources</p></li>
+<li><p>DNK election 1945 to 1994: corrected number of seats</p></li>
+<li><p>DNK election 1947: added HV</p></li>
+<li><p>DNK election 1957: corrected total seats</p></li>
+<li><p>DNK election 1973 to 1977: added SV as alliance member</p></li>
+<li><p>DNK election 1973: added DU as alliance member</p></li>
+<li><p>DNK party: recoded party family Dansk Folkeparti</p></li>
+<li><p>ESP cabinet 1977 and 1979: Gonzalez renamed into Suarez</p></li>
+<li><p>ESP election 1977: corrected and updated results</p></li>
+<li><p>ESP party: recoded CHA (party_id 1675) into CA (party_id 1367)</p></li>
+<li><p>EST cabinet 2009: Ansip II split into two cabinets</p></li>
+<li><p>EST election 1992 and 1995: updated source, added turnout data, corrected and updated results</p></li>
+<li><p>EST party: added V, EPL, Metsa, ERKL, KunRoh, ETRE, OIG, TEE</p></li>
+<li><p>FIN election 1948 to 1983: updated data sources for RKP-SFP and AS</p></li>
+<li><p>FIN election 1958 and 1962: removed SKL</p></li>
+<li><p>FIN election 1966: added SKDL/TPSL alliance</p></li>
+<li><p>FIN election 1987: corrected SKDL vote share</p></li>
+<li><p>FIN election 1991 and 1995: recoded SKYP results into SEP</p></li>
+<li><p>FIN election 1995: added VSL</p></li>
+<li><p>FIN election 2003: corrected election date</p></li>
+<li><p>FIN election EP 1999: corrected number of seats</p></li>
+<li><p>FIN party: minor updates on party names and predecessor/successor parties</p></li>
+<li><p>FIN party: SKP-97 party names changed into SKP-Y</p></li>
+<li><p>FRA election 2007: corrected vote share and seats, added votes</p></li>
+<li><p>FRA election EP 2009: corrected number of seats Gauche</p></li>
+<li><p>FRA party: added UEM</p></li>
+<li><p>FRA party: recoded UMP Benoit/Laver ID</p></li>
+<li><p>FRA party: removed The Right (party_id 157) duplicate of Other Right (party_id 285)</p></li>
+<li><p>GBR election 1974 to 1987: calculated ‘vote_share’ for some parties from Northern Ireland – ticket:66</p></li>
+<li><p>GBR election 1983 and 1987: recoded LD as Alliance</p></li>
+<li><p>GBR election EP: added notes about vote share in regions</p></li>
+<li><p>GBR election EP 1999: corrected vote share and number of valid votes</p></li>
+<li><p>GBR party: updated EES IDs for SNP, Plaid, UKIP, PWCL</p></li>
+<li><p>GDR cabinet 1990: Maizere coded changes in party composition and defectors</p></li>
+<li><p>GDR election 1990: coded electoral alliances and its members, corrected number of votes</p></li>
+<li><p>GDR party: updated all entries; coded party changes (including DEU parties)</p></li>
+<li><p>GRC party: added names for KODISO</p></li>
+<li><p>GRC party: recoded and merged EK into EDIK</p></li>
+<li><p>ISL cabinet 1944 and 1946: Thors II, Thors III recoded Ab into So</p></li>
+<li><p>ISL cabinet 1979: Groendal changed into caretaker cabinet</p></li>
+<li><p>ISL election 1946 to 1953: replaced Ab by So</p></li>
+<li><p>ISL election 1967: added OS and updated source</p></li>
+<li><p>ISL party: corrected ‘þ’ transcription into ‘th’ and removed remaining capitalisation of party names</p></li>
+<li><p>ISL party: recoded Thjo (party_id 1637) into Pjo (party_id 205)</p></li>
+<li><p>ITA election 1946 and 1948: recoded PLI results into UDN and BN (alliances), added alliance members</p></li>
+<li><p>ITA election 1963 and 1968: recoded PNM results into PDIUM (new party)</p></li>
+<li><p>ITA party: updated party names and predecessor/successor entries for Socialist parties (PSI, PSDI, PSU)</p></li>
+<li><p>JPN cabinet 1980: Ito removed – three month constrain</p></li>
+<li><p>JPN cabinet 1993: added NP</p></li>
+<li><p>JPN cabinet 1994: removed LP</p></li>
+<li><p>JPN cabinet 1998: split Obuchi into three cabinets</p></li>
+<li><p>JPN cabinet 2009: renamed Hatoyama into Hatoyama Y</p></li>
+<li><p>JPN election 1958: added votes</p></li>
+<li><p>JPN election 1960 to 1967: added number of votes</p></li>
+<li><p>JPN election 1969 and 1979: corrected number of votes</p></li>
+<li><p>JPN election 2005: corrected number of seats (all parties except LDP and DPJ)</p></li>
+<li><p>JPN election 2009: updated source and added NPD</p></li>
+<li><p>JPN party, election, cabinet: recoded DSP (party_id 1053) into SDP (party_id 940) for elections and cabinets after 1994</p></li>
+<li><p>JPN party: recoded NK into K(CGP)</p></li>
+<li><p>JPN party: unified short names to english version – ticket:63</p></li>
+<li><p>LTU cabinet 2008: Kubilius II added TPP</p></li>
+<li><p>LTU election 1992: added votes and parties</p></li>
+<li><p>LTU party: added VPJST and LLL</p></li>
+<li><p>LVA election 2010: added seats total</p></li>
+<li><p>NLD cabinet 1977: Den Uyl II; set start of cabinet to date of election (1977-05-25) – three month constrain</p></li>
+<li><p>NLD election 1977: CDA as electoral alliance (ARP, CHU, KVP)</p></li>
+<li><p>NLD election EP 1999: added electoral alliance SGP/GPV/RPF</p></li>
+<li><p>NOR cabinet 1940: removed Nygaardsvold II</p></li>
+<li><p>NOR cabinet 1945: Gerhardsen I coded as caretaker and parties added</p></li>
+<li><p>NOR election 1961 to 1969: recoded SV into SF</p></li>
+<li><p>NOR election 1973: added SV alliance members</p></li>
+<li><p>NOR party: updated RV names</p></li>
+<li><p>NZL election 1999: changed number of seats NZFP</p></li>
+<li><p>POL cabinet 1991: Olszewski recoded WAK into ZChN (alliance member) and removed PCD</p></li>
+<li><p>POL cabinet 1992 and 1993: Suchocka I and II added PSL, PCD and recoded WAK into ZChN (alliance member)</p></li>
+<li><p>POL party: removed L; recoded PD into UW-PD</p></li>
+<li><p>PRT election 1979: corrected seats of AD alliance members, added Ref and updated source</p></li>
+<li><p>PRT election EP 1994: corrected vote share</p></li>
+<li><p>PRT party: added PAN; recoded party family PSD; removed Benoit/Laver ID from PDC</p></li>
+<li><p>SVN party: removed SA and LU</p></li>
+<li><p>SWE election 1985: updated source, corrected turnout data, coded alliance member</p></li>
+</ul>
+</section>
+</section>
+<section id="webpage-7" class="level4">
+<h4 class="anchored" data-anchor-id="webpage-7">Webpage</h4>
+<ul>
+<li>party – show information about electoral alliances and alliance members in election results (superscript symbol)</li>
+<li>party – show party foundation date</li>
+<li>party – show only year of party change if date is coded as 1 July (default for unknown day/month)</li>
+<li>election, cabinet – show name of party for elections and cabinets based on information in table ‘party_name_change’ (if available)</li>
+<li>election – moved information about ‘Changes of party composition in parliament’ into experimental version</li>
+<li>election – show only results for more than 0.5% vote share</li>
+<li>cabinet – don’t show termination date (experimental version observation only)</li>
+<li>external – corrected publication year references for Castles/Mair, Ray and EU Profiler</li>
+<li>data sources – cleaned up names of some of the entries</li>
+</ul>
+</section>
+<section id="database-6" class="level4">
+<h4 class="anchored" data-anchor-id="database-6">Database</h4>
+<ul>
+<li>new table – ‘cabinet_support’ to include parties that support (minority) cabinets (experimental version)</li>
+<li>new table – ‘party_family’ to include additional party families for a party</li>
+<li>tables ‘party’, ‘party_change’, ‘party_name_change’ – added column ‘data_source’</li>
+<li>table ‘party’ – added column ‘description’</li>
+<li>table ‘party’ – added column ‘foundation_date’ (experimental version)</li>
+<li>table ‘party_change’ – added variable ‘type_id’ (experimental version)</li>
+<li>‘view_cabinet’ – fixed issue in view definition to include all cabinets – ticket:65</li>
+<li>‘view_election’ – added variable ‘previous_cabinet_id’</li>
+</ul>
+</section>
+</section>
+<section id="version-1011" class="level3">
+<h3 class="anchored" data-anchor-id="version-1011">Version 10/11</h3>
+<p>Stable version 16 November 2010</p>
+<section id="summary" class="level4">
+<h4 class="anchored" data-anchor-id="summary">Summary</h4>
+<ul>
+<li>complete database refactoring – recoding of table/variable names and all id variables – see below</li>
+<li>new web design – Jens Hoffmeister (underline webdesign Berlin) 2010</li>
+<li>new data: European Election Study (2009) party ids added; Belgium, United Kingdom, Portugal, Latvia updated from seats to votes level data; Swiss cabinets since 1945 added</li>
+<li>recent elections and cabinets until October 2010 and data corrections – see below</li>
+</ul>
+</section>
+<section id="data-6" class="level4">
+<h4 class="anchored" data-anchor-id="data-6">Data</h4>
+<section id="new-information-9" class="level5">
+<h5 class="anchored" data-anchor-id="new-information-9">New information</h5>
+<ul>
+<li><p>elections 2010 added: HUN, GBR, CZE, NLD, SVK, BEL, SWE, AUS, LVA</p></li>
+<li><p>cabinets 2010 added: NLD Balkenende V, ROU Bejinariu, HUN Orban II, GBR Cameron, JPN Kan, FIN Kiviniemi, AUS Gillard, SVK Radicova, CZE Necas, SWE Reinfeldt, AUS Gillard II, LVA Dombrovskis III,</p></li>
+<li><p>updated from seats to votes level data: BEL, GBR, PRT, LVA</p></li>
+<li><p>European Election Study (2009) party ids added</p></li>
+<li><p>CHE all cabinets since 1945 added</p></li>
+<li><p>POL parliament_change – specification of party composition changes in 2007 parliament</p></li>
+</ul>
+</section>
+<section id="corrections" class="level5">
+<h5 class="anchored" data-anchor-id="corrections">Corrections</h5>
+<ul>
+<li><p>BEL cabinet – recoded party ids for CVP and SP to CD&amp;V/N-VA and SPA/Spirit for all cabinets after 2003 election</p></li>
+<li><p>BEL cabinet – removed orphaned observations from ‘cab_party’ (old_cabID 19600, 19731, 19732, 19760)</p></li>
+<li><p>BEL cabinet – renamed Eyskens 1981 into ‘Eyskens M’</p></li>
+<li><p>BGR cabinet – Stanishev cabinet coding of BSP as KzB</p></li>
+<li><p>BIH party – added parties (old_partyID: 11, 15, 21, 22, 26, 30) to match all CMP parties</p></li>
+<li><p>CAN cabinet – Diefenbaker II and III added</p></li>
+<li><p>CAN cabinet – St-Laurent split into I, II, II</p></li>
+<li><p>CAN cabinet – King III dates corrected</p></li>
+<li><p>CZE cabinet – Tosovsky coded as ‘caretaker’</p></li>
+<li><p>CZE election – recoding ‘election_date’ to last date of election and adding ‘opening_date’ to ‘datajson’</p></li>
+<li><p>CZE party – recoded and removed HSD/SMS duplicate (‘old_partyID’ 52)</p></li>
+<li><p>ESP election ep – 2004 and 2009 EP election results updated with official sources</p></li>
+<li><p>ESP party – recoded I (‘old_partyID’ 71) into IU/PCE (‘old_partyID’ 57)</p></li>
+<li><p>EST parties – RKI (1992); RKI/ERSPI, ERSP, I (1995) and affected elections/cabinets – revising</p></li>
+<li><p>FIN cabinet – Aura II corrected ‘start_date’ and ‘end_date’</p></li>
+<li><p>FIN cabinet – Barre I, Barre II added observations for non-partisan prime ministers (‘pm’) to ‘cabinet_party’</p></li>
+<li><p>FIN cabinet – Fagerholm II, added L (Liberals)</p></li>
+<li><p>FIN cabinet – Fagerholm III and Virolainen added Liberals</p></li>
+<li><p>FIN cabinet – Kekkonen II, added RKP</p></li>
+<li><p>FIN cabinet – Lipponen I, added VAS</p></li>
+<li><p>FIN cabinet – Lipponen II, split into II and III following resignation of VIHR</p></li>
+<li><p>FIN cabinet – Paasikivi, Fieandt, Kuuskoski, Lehto, Aura I, Aura II, Liinamaa added observations for non-partisan prime ministers (‘pm’) to ‘cabinet_party’</p></li>
+<li><p>FIN cabinet – Sukselainen, Karjalainen, Sorsa II, Sorsa III, Holkeri, Aho recoded as several cabinets due to change in party composition</p></li>
+<li><p>FRA cabinet – Fillon I,II corrected cabinet name</p></li>
+<li><p>FRA cabinet – Barre II ‘starting_date’ recoded</p></li>
+<li><p>GBR cabinet – Eden government split into Eden I and Eden II</p></li>
+<li><p>GBR election – 1945 corrections</p></li>
+<li><p>GER cabinet – Adenauer II split into several cabinets and coding of party changes</p></li>
+<li><p>GRC cabinet – renamed Karamanlis cabinets to avoid duplicated cabinet names</p></li>
+<li><p>HUN cabinet – Bajnai corrected cabinet name</p></li>
+<li><p>HUN cabinet – Gyurcsan III removed SzDSz</p></li>
+<li><p>ITA cabinet – Prodi I and Amato II added observations for non-partisan prime ministers (‘pm’) to ‘cabinet_party’</p></li>
+<li><p>ITA cabinet – Moro I government split into I, II, III and recoded later Moro governments into IV and V</p></li>
+<li><p>ITA cabinet – Spadolini and Craxi government split into I and II</p></li>
+<li><p>ITA party – PdL duplicate recoded and removed (‘old_partyID’ 151)</p></li>
+<li><p>ITA party/alliance – CCD/CDU unified; recoded old_partyID 140 into 53</p></li>
+<li><p>JPN cabinet – Hatoyama I added DSP and KS</p></li>
+<li><p>JPN cabinet – Koizumo II ‘start_date’ recoded to 2003-11-19; previous coding was linked to 2000 election results</p></li>
+<li><p>JPN cabinet – Ohira I corrected ‘start_date’</p></li>
+<li><p>LTU cabinet – renamed Vagnorius cabinets by adding I and II</p></li>
+<li><p>LTU party – LSDP split into two parties and recoded pre 2001 election results of LSDP to new party ID</p></li>
+<li><p>LVA cabinet – 1998 legislative term correction of party composition for cabinets</p></li>
+<li><p>LVA cabinet – Dombrovskis 2009 added</p></li>
+<li><p>LVA cabinet – Skele I and Skele II added observations for non-partisan prime ministers (‘pm’) to ‘cabinet_party’</p></li>
+<li><p>LVA election – revision of election results (esp.&nbsp;2002) during update to vote level data</p></li>
+<li><p>NLD cabinet – coding of ‘defector’ parties</p></li>
+<li><p>MLT cabinet – renamed cabinets to avoid duplicated cabinet names</p></li>
+<li><p>NLD cabinet – Den Uyl government split into Den Uyl I and Den Uyl II (caretaker)</p></li>
+<li><p>NZL cabinet – Howard I split into two cabinets taking 1951 election into account</p></li>
+<li><p>POL cabinet – Kaczynski I, II, III, IV recoded into one cabinet – following more specified cabinet coding rules</p></li>
+<li><p>POL cabinet – Marcinkiewicz II corrected ‘startingDate’ from 2005 to 2006</p></li>
+<li><p>POL cabinet – Pawlak I – added party</p></li>
+<li><p>POL cabinet – Suchocka II coded as ‘caretaker’</p></li>
+<li><p>POL election – LiD dissolution in April 2008 coded</p></li>
+<li><p>POL election – 1992 PO recoded into POC</p></li>
+<li><p>POL party – recoding of some party families</p></li>
+<li><p>ROU cabinet – Athanasiu, Bejinariu coded as ‘caretaker’</p></li>
+<li><p>SVN cabinet – Jansa ‘startingDate’ recoded to 2004-12-03; previous coding was linked to 2000 election results</p></li>
+<li><p>SVN cabinet – Peterle parties recoded</p></li>
+<li><p>SVN cabinet – Drnovsek II removed ZS</p></li>
+<li><p>SVN election – 1990 election added</p></li>
+<li><p>SVN election – added two seats to each election one for Italian and the other for Hungarian national community seat</p></li>
+<li><p>SVN party – SLS/SKD recoded into SLS</p></li>
+<li><p>corrected differences between coded and calculated (votes/votes_valid) vote shares (except PRT) – ticket:56</p></li>
+</ul>
+</section>
+</section>
+<section id="webpage-8" class="level4">
+<h4 class="anchored" data-anchor-id="webpage-8">Webpage</h4>
+<ul>
+<li><p>new web design</p></li>
+<li><p>further information about cabinet below list of parties in cabinet</p></li>
+<li><p>list ‘comment’ in documentation of table variables</p></li>
+<li><p>show 0 seats on election result pages</p></li>
+<li><p>government type (minority, minimum winning, oversized) on cabinet pages and cabinet index – ticket:36</p></li>
+<li><p>legend for tables on index pages of elections and cabinets</p></li>
+<li><p>Famfamfam silk icons for links to downloads</p></li>
+<li><p>information about recalculated seat shares in cabinet page</p></li>
+<li><p>smaller font size for election date on list of cabinets</p></li>
+</ul>
+</section>
+<section id="database-7" class="level4">
+<h4 class="anchored" data-anchor-id="database-7">Database</h4>
+<ul>
+<li>complete database refactoring
+<ul>
+<li>renaming of tables and variables</li>
+<li>unique primary keys in all tables (variable ‘id’)
+<ul>
+<li>old id variables are kept in core tables with prefix ‘old_’ (eg. ‘old_partyID’ in party table)</li>
+</ul></li>
+<li>foreign key enforcement (in Django)</li>
+<li>‘data_json’ variable for additional information in some tables (experimental version)</li>
+<li>coding of all ‘id’ variables in ‘info_id’ – except variables with an own table (e.g.&nbsp;country, party, election)</li>
+</ul></li>
+</ul>
+
+
+</section>
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Kopiert");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Kopiert");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
