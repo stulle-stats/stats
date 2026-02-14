@@ -1,15 +1,34 @@
+# -----------------------------
+# R / RStudio
+# -----------------------------
 .Rhistory
+.RData
+.Ruserdata
 .Rproj.user/
+*.Rproj
+
+# -----------------------------
+# Quarto
+# -----------------------------
 .quarto/
 _site/
-docs/
-*.html
+
+# -----------------------------
+# Betriebssystem
+# -----------------------------
+.DS_Store
+Thumbs.db
+
+# -----------------------------
+# Logs / temporäre Dateien
+# -----------------------------
 *.log
 *.aux
 *.out
 *.toc
 *.synctex.gz
-.DS_Store
-Thumbs.db
-/.quarto/
-**/*.quarto_ipynb
+
+# -----------------------------
+# Rohdaten (nie ins Repo)
+# -----------------------------
+data/raw/
