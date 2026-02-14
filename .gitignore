@@ -11,3 +11,5 @@ docs/
 *.synctex.gz
 .DS_Store
 Thumbs.db
+/.quarto/
+**/*.quarto_ipynb
