@@ -1,0 +1,18 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Statistik-Portal"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Start
+      - href: topics/wahlen.qmd
+        text: Wahlen & Umfragen
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    lang: de

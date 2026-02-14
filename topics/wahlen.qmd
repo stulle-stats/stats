@@ -1,0 +1,39 @@
+---
+title: "wahlen"
+format: html
+---
+```{r setup}
+library(here)
+library(sf)
+library(leaflet)
+library(plotly)
+library(DT)
+library(dplyr)
+
+df <- readRDS(here::here("data", "publish", "wahlen.rds"))
+```
+
+```{r}
+nc <- sf::st_read(system.file("shape/nc.shp", package="sf"), quiet = TRUE)
+
+leaflet(nc) |>
+  addTiles() |>
+  addPolygons(
+    weight = 1,
+    fillOpacity = 0.5,
+    popup = ~NAME
+  )
+```
+
+## Interaktive Zeitreihe
+
+```{r}
+
+plot_ly(df, x = ~jahr, y = ~wert, type = "scatter", mode = "lines+markers")
+```
+
+## Tabelle
+
+```{r}
+DT::datatable(df)
+```

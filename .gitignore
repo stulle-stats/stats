@@ -1,0 +1,13 @@
+.Rhistory
+.Rproj.user/
+.quarto/
+_site/
+docs/
+*.html
+*.log
+*.aux
+*.out
+*.toc
+*.synctex.gz
+.DS_Store
+Thumbs.db
