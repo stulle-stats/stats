@@ -10,114 +10,267 @@ library(plotly)
 library(htmltools)
 library(jsonlite)
 
+
+# color changes
+fam_order <- c(10,20,30,40,50,60,70,80,90,95,98)
+
+parfam_labels <- c(
+  `10`="Green/Ecologist", `20`="Left Socialist", `30`="Social Democratic",
+  `40`="Liberal", `50`="Christian Democratic", `60`="Conservative",
+  `70`="Nationalist", `80`="Agrarian", `90`="Ethnic/Regional",
+  `95`="Special Interest", `98`="Diverse"
+)
+
+# Beispiel-Palette (ändere Hex nach Wunsch)
+parfam_colors <- c(
+  `10` = "#2E8B57",  # Green / Ecologist
+  `20` = "#B22222",  # Left Socialist
+  `30` = "#E41A1C",  # Social Democratic
+  `40` = "#FFD700",  # Liberal
+  `50` = "#000000",  # Christian Democratic
+  `60` = "#1F4E79",  # Conservative (tiefes, edles Navy-Blau)
+  `70` = "#8B4513",  # Nationalist (Braun)
+  `80` = "#FF8C00",  # Agrarian (Orange)
+  `90` = "#6A3D9A",  # Ethnic / Regional
+  `95` = "#C9A227",  # Special Interest
+  `98` = "#9E9E9E"   # Diverse
+)
+
 json_txt <- readLines(
-  here::here("data","publish","manifesto.json"),
+  here::here("data", "publish", "manifesto.json"),
   warn = FALSE
 )
 
-d <- fromJSON(paste(json_txt, collapse="\n"))
+d <- fromJSON(paste(json_txt, collapse = "\n"))
 years <- sort(unique(d$year))
 families <- sort(unique(d$parfam))
 
+# ---- 2) UI ----
 year_select <- tags$select(
-  id="yearSelect",
-  lapply(years, function(y) tags$option(value=y, y))
+  id = "yearSelect",
+  lapply(years, function(y) tags$option(value = y, y))
 )
 
 checkboxes <- lapply(families, function(f){
   tags$label(
-    style="margin-right:8px;",
-    tags$input(type="checkbox", class="pfbox",
-               value=f, if (f==30) "checked" else NULL),
-    paste("PF", f)
+    style = "margin-right:8px;",
+    tags$input(
+      type = "checkbox",
+      class = "pfbox",
+      value = f,
+      if (f == 30) "checked" else NULL
+    ),
+    parfam_labels[as.character(f)]
   )
 })
 
 ui <- tags$div(
   tags$div("Year: ", year_select),
-  tags$div(style="margin-top:10px;", checkboxes)
+  tags$div(style = "margin-top:10px;", checkboxes)
 )
 
-fig <- plot_geo() %>%
+# ---- 3) Plotly: Dummy-Legende (Vote share) + 1 Trace pro Familie ----
+fig <- plot_geo()
+
+# Dummy-Trace nur für die Legende (zeigt Vote share-Skala)
+fig <- fig %>%
   add_trace(
-    type="choropleth",
-    locations=character(0),
-    z=numeric(0),
-    locationmode="ISO-3",
-    colorscale="Viridis"
-  ) %>%
-  layout(
-    geo=list(projection=list(type="orthographic")),
-    title="Loading..."
+    type = "choropleth",
+    locations = character(0),
+    z = numeric(0),
+    text = character(0),
+    hoverinfo = "skip",
+    locationmode = "ISO-3",
+    colorscale = list(list(0, "#f7f7f7"), list(1, "#000000")),
+    zmin = 0,
+    zmax = 100,
+    showscale = TRUE,
+    opacity = 0,  # unsichtbar, aber Colorbar bleibt
+    colorbar = list(title = "Vote share (pp)", len = 0.8),
+    marker = list(line = list(width = 0))
   )
 
+# Pro Familie ein eigener Trace: weiß -> Familienfarbe (Dunkelheit = Anteil)
+for (f in fam_order) {
+  col <- unname(parfam_colors[as.character(f)])
+  fig <- fig %>%
+    add_trace(
+      type = "choropleth",
+      locations = character(0),
+      z = numeric(0),
+      text = character(0),
+      hoverinfo = "text",
+      locationmode = "ISO-3",
+      colorscale = list(list(0, "#ffffff"), list(1, col)),
+      zmin = 0,
+      zmax = 100,
+      showscale = FALSE,
+      marker = list(line = list(width = 0)),
+      name = unname(parfam_labels[as.character(f)])
+    )
+}
+
+fig <- fig %>%
+  layout(
+    geo = list(
+      projection = list(type = "orthographic"),
+      showland = TRUE,
+      showcountries = TRUE
+    ),
+    title = "Loading..."
+  )
+
+# ---- 4) JS: pro Land letzte Wahl ≤ Jahr; dominante Familie unter gewählten; Farbe=Familie, Dunkelheit=Anteil ----
 fig <- htmlwidgets::onRender(
-fig,
-sprintf("
-function(el,x){
+  fig,
+  sprintf(
+    "
+function(el, x){
 
-const data = %s;
+  const data = %s;
 
-function latestRows(year){
- const cutoff = new Date(year+'-12-31').getTime();
- const best = new Map();
+  // Trace-Index: 0 = Dummy-Legende, 1..N = fam_order in Reihenfolge
+  const famOrder = [10,20,30,40,50,60,70,80,90,95,98];
+  const parfamLabels = {
+    10:'Green/Ecologist', 20:'Left Socialist', 30:'Social Democratic',
+    40:'Liberal', 50:'Christian Democratic', 60:'Conservative',
+    70:'Nationalist', 80:'Agrarian', 90:'Ethnic/Regional',
+    95:'Special Interest', 98:'Diverse'
+  };
 
- for(const r of data){
-  if(!r.iso_a3 || !r.election_date_str) continue;
-  const t = Date.parse(r.election_date_str);
-  if(t>cutoff) continue;
-
-  const k=r.iso_a3;
-  if(!best.has(k) || t>best.get(k).t){
-    best.set(k,{t:t,rows:[r]});
-  }else if(t===best.get(k).t){
-    best.get(k).rows.push(r);
+  function getYear(){
+    const y = document.getElementById('yearSelect');
+    return y ? parseInt(y.value, 10) : NaN;
   }
- }
- let out=[];
- for(const v of best.values()) out=out.concat(v.rows);
- return out;
+
+  function getSelectedFamilies(){
+    return Array.from(document.querySelectorAll('.pfbox'))
+      .filter(b => b.checked)
+      .map(b => parseInt(b.value, 10))
+      .filter(v => !Number.isNaN(v));
+  }
+
+  function latestRows(year){
+    const cutoff = Date.parse(year + '-12-31');
+    const best = new Map(); // iso -> {t, rows}
+
+    for(const r of data){
+      if(!r.iso_a3 || !r.election_date_str) continue;
+      const t = Date.parse(r.election_date_str);
+      if(Number.isNaN(t) || t > cutoff) continue;
+
+      const iso = r.iso_a3;
+      const cur = best.get(iso);
+
+      if(!cur || t > cur.t){
+        best.set(iso, { t: t, rows: [r] });
+      } else if(t === cur.t){
+        cur.rows.push(r);
+      }
+    }
+
+    let out = [];
+    for(const v of best.values()) out = out.concat(v.rows);
+    return out;
+  }
+
+  function update(){
+    const year = getYear();
+    if(Number.isNaN(year)) return;
+
+    const fams = getSelectedFamilies();
+
+    // Wenn nichts gewählt: alle Familien-Traces leeren (Dummy-Legende bleibt)
+    if(fams.length === 0){
+      for(let i = 1; i <= famOrder.length; i++){
+        Plotly.restyle(el, { locations:[[]], z:[[]], text:[[]] }, [i]);
+      }
+      Plotly.relayout(el, { title: 'No families selected | ≤ ' + year });
+      return;
+    }
+
+    const rows = latestRows(year);
+
+    // iso -> Map(fam -> sum(vote_sum))
+    const byCountry = new Map();
+
+    for(const r of rows){
+      const fam = parseInt(r.parfam, 10);
+      if(!fams.includes(fam)) continue;
+
+      const iso = r.iso_a3;
+      const val = r.vote_sum; // kumulierter Stimmenanteil (pp)
+      if(val == null || Number.isNaN(val)) continue;
+
+      if(!byCountry.has(iso)) byCountry.set(iso, new Map());
+      const fm = byCountry.get(iso);
+      fm.set(fam, (fm.get(fam) || 0) + val);
+    }
+
+    // pro Familie Arrays vorbereiten
+    const perFam = new Map();
+    for(const f of famOrder) perFam.set(f, {loc:[], z:[], text:[]});
+
+    let vmax = 0;
+
+    // pro Land dominante Familie bestimmen
+    for(const [iso, fm] of byCountry.entries()){
+      let bestFam = null;
+      let bestVal = -Infinity;
+
+      for(const [fam, val] of fm.entries()){
+        if(val > bestVal){ bestVal = val; bestFam = fam; }
+      }
+      if(bestFam == null) continue;
+
+      vmax = Math.max(vmax, bestVal);
+
+      const slot = perFam.get(bestFam);
+      if(!slot) continue;
+
+      slot.loc.push(iso);
+      slot.z.push(bestVal);
+      slot.text.push(
+        iso +
+        '<br>Dominant: ' + (parfamLabels[bestFam] || ('PF ' + bestFam)) +
+        '<br>vote_sum: ' + bestVal.toFixed(2)
+      );
+    }
+
+    // Skala: Vote share von 0 bis vmax (oder 100, wenn du fix willst)
+    const zmax = Math.max(1, Math.min(100, vmax));
+
+    // Dummy-Legende (Trace 0) aktualisieren
+    Plotly.restyle(el, { zmin:[0], zmax:[zmax] }, [0]);
+
+    // Familien-Traces 1..N aktualisieren
+    famOrder.forEach((f, idx) => {
+      const tr = 1 + idx;
+      const slot = perFam.get(f);
+      Plotly.restyle(el, {
+        locations: [slot.loc],
+        z: [slot.z],
+        text: [slot.text],
+        zmin: [0],
+        zmax: [zmax]
+      }, [tr]);
+    });
+
+    Plotly.relayout(el, {
+      title: 'Latest election ≤ ' + year + ' | dominant among selected families | scale 0..' + zmax.toFixed(0)
+    });
+  }
+
+  const y = document.getElementById('yearSelect');
+  if(y) y.addEventListener('change', update);
+  document.querySelectorAll('.pfbox').forEach(b => b.addEventListener('change', update));
+
+  update();
 }
-
-function update(){
- const year=parseInt(document.getElementById('yearSelect').value);
- const fams=Array.from(document.querySelectorAll('.pfbox'))
-                 .filter(b=>b.checked)
-                 .map(b=>parseInt(b.value));
-
- const rows=latestRows(year);
- const acc=new Map();
-
- for(const r of rows){
-   if(!fams.includes(r.parfam)) continue;
-   const iso=r.iso_a3;
-   acc.set(iso,(acc.get(iso)||0)+r.vote_sum);
- }
-
- const locations=Array.from(acc.keys());
- const z=locations.map(k=>acc.get(k));
-
- Plotly.restyle(el,{
-   locations:[locations],
-   z:[z]
- },[0]);
-
- Plotly.relayout(el,{
-   title:'Latest election ≤ '+year
- });
-}
-
-document.getElementById('yearSelect').addEventListener('change',update);
-document.querySelectorAll('.pfbox')
-        .forEach(b=>b.addEventListener('change',update));
-
-update();
-}
-", toJSON(d, dataframe="rows", auto_unbox=TRUE))
+    ",
+    jsonlite::toJSON(d, dataframe = "rows", na = "null", auto_unbox = TRUE)
+  )
 )
 
-tagList(ui,fig)
-
-
-
+tagList(ui, fig)
 ```

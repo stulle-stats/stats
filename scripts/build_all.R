@@ -7,5 +7,4 @@ if (requireNamespace("here", quietly = TRUE)) {
 dir.create(file.path("data", "publish"), recursive = TRUE, showWarnings = FALSE)
 
 # einzelne Builds
-source(file.path("scripts", "build_wahlen.R"))
 source(file.path("scripts", "build_manifesto.R"))

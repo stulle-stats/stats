@@ -8,8 +8,6 @@ website:
     left:
       - href: index.qmd
         text: Start
-      - href: topics/wahlen.qmd
-        text: Wahlen & Umfragen
       - href: topics/manifesto_globe.qmd
         text: Parteifamilien
 

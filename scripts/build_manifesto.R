@@ -71,6 +71,28 @@ e_parfam <- m %>%
 head(e_parfam)
 summary(e_parfam$year)
 
+# Labels
+parfam_map <- tibble::tibble(
+  parfam = c(10,20,30,40,50,60,70,80,90,95,98),
+  parfam_label = c(
+    "Green/Ecologist",
+    "Left Socialist",
+    "Social Democratic",
+    "Liberal",
+    "Christian Democratic",
+    "Conservative",
+    "Nationalist",
+    "Agrarian/Rural",
+    "Ethnic/Regional",
+    "Special Interest",
+    "Diverse/Other"
+  )
+)
+
+e_parfam <- e_parfam %>%
+  left_join(parfam_map, by = "parfam")
+table(e_parfam$parfam_label)
+
 # 3)Export für Browser
 # Browser braucht ISO-Datum als String.
 

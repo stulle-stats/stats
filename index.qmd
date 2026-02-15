@@ -4,6 +4,4 @@ title: "Start"
 
 ## Überblick
 
--   [wahlen](topics/wahlen.qmd)
-
-Test123321
+äh dings also hier gibts statistiken die ich erstellt hab hihi
