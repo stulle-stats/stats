@@ -1,0 +1,123 @@
+---
+title: "Manifesto Globe (Parteifamilien)"
+format: html
+---
+
+```{r setup}
+
+library(here)
+library(plotly)
+library(htmltools)
+library(jsonlite)
+
+json_txt <- readLines(
+  here::here("data","publish","manifesto.json"),
+  warn = FALSE
+)
+
+d <- fromJSON(paste(json_txt, collapse="\n"))
+years <- sort(unique(d$year))
+families <- sort(unique(d$parfam))
+
+year_select <- tags$select(
+  id="yearSelect",
+  lapply(years, function(y) tags$option(value=y, y))
+)
+
+checkboxes <- lapply(families, function(f){
+  tags$label(
+    style="margin-right:8px;",
+    tags$input(type="checkbox", class="pfbox",
+               value=f, if (f==30) "checked" else NULL),
+    paste("PF", f)
+  )
+})
+
+ui <- tags$div(
+  tags$div("Year: ", year_select),
+  tags$div(style="margin-top:10px;", checkboxes)
+)
+
+fig <- plot_geo() %>%
+  add_trace(
+    type="choropleth",
+    locations=character(0),
+    z=numeric(0),
+    locationmode="ISO-3",
+    colorscale="Viridis"
+  ) %>%
+  layout(
+    geo=list(projection=list(type="orthographic")),
+    title="Loading..."
+  )
+
+fig <- htmlwidgets::onRender(
+fig,
+sprintf("
+function(el,x){
+
+const data = %s;
+
+function latestRows(year){
+ const cutoff = new Date(year+'-12-31').getTime();
+ const best = new Map();
+
+ for(const r of data){
+  if(!r.iso_a3 || !r.election_date_str) continue;
+  const t = Date.parse(r.election_date_str);
+  if(t>cutoff) continue;
+
+  const k=r.iso_a3;
+  if(!best.has(k) || t>best.get(k).t){
+    best.set(k,{t:t,rows:[r]});
+  }else if(t===best.get(k).t){
+    best.get(k).rows.push(r);
+  }
+ }
+ let out=[];
+ for(const v of best.values()) out=out.concat(v.rows);
+ return out;
+}
+
+function update(){
+ const year=parseInt(document.getElementById('yearSelect').value);
+ const fams=Array.from(document.querySelectorAll('.pfbox'))
+                 .filter(b=>b.checked)
+                 .map(b=>parseInt(b.value));
+
+ const rows=latestRows(year);
+ const acc=new Map();
+
+ for(const r of rows){
+   if(!fams.includes(r.parfam)) continue;
+   const iso=r.iso_a3;
+   acc.set(iso,(acc.get(iso)||0)+r.vote_sum);
+ }
+
+ const locations=Array.from(acc.keys());
+ const z=locations.map(k=>acc.get(k));
+
+ Plotly.restyle(el,{
+   locations:[locations],
+   z:[z]
+ },[0]);
+
+ Plotly.relayout(el,{
+   title:'Latest election ≤ '+year
+ });
+}
+
+document.getElementById('yearSelect').addEventListener('change',update);
+document.querySelectorAll('.pfbox')
+        .forEach(b=>b.addEventListener('change',update));
+
+update();
+}
+", toJSON(d, dataframe="rows", auto_unbox=TRUE))
+)
+
+tagList(ui,fig)
+
+
+
+```

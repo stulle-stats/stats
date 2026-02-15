@@ -10,6 +10,9 @@ website:
         text: Start
       - href: topics/wahlen.qmd
         text: Wahlen & Umfragen
+      - href: topics/manifesto_globe.qmd
+        text: Parteifamilien
+
 
 format:
   html:
